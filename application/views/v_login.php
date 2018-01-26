@@ -36,7 +36,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="<?php echo base_url('index.php/home/loginProcess'); ?>" method="post">
+    <form action="<?php echo base_url('home/loginProcess'); ?>" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Username" name="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

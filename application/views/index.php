@@ -418,7 +418,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 						</script>
 				<div class="login">
-					<a href="login.html"><span><i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search</span></a>
 				</div>
 			</div>
 		</div>

@@ -1,11 +1,9 @@
 <?php
-
 /**
 * 
 */
 class Home extends CI_Controller
-{
-	
+{	
 	public function __construct()
 	{
 		parent::__construct();
@@ -13,13 +11,13 @@ class Home extends CI_Controller
 		$this->load->library('session');
 		if($this->session->userdata('username'))
 		{
-			if($this->session->userdata('level') == "admin")
+			if($this->session->userdata('level')=='admin') 
 			{
 				redirect('admin/admin');
 			}
-			elseif($this->session->userdata('level') == "member")
+			elseif ($this->session->userdata('level')=='user') 
 			{
-				redirect('member/member');
+				redirect('user/user');
 			}
 			else
 			{
@@ -56,7 +54,7 @@ class Home extends CI_Controller
 			'username' => $username,
 			'email' => $email,
 			'password' => $password,
-			'level' => 'member'
+			'level' => 3
 		);
 
 		$this->my_model->input_data($data, 't_user');
@@ -76,14 +74,18 @@ class Home extends CI_Controller
 		{
 			foreach ($result->result() as $row) 
 			{
-				$username = $row->username;
-				$password = $row->password;
+				$uname = $row->username;
+				$pass = $row->password;
+				$level = $row->level;
+				$fullname = $row->fullname;
 			}
 
 			$newdata = array
 			(
-		        'username' => $username,
-		        'password' => $password,
+		        'username' => $uname,
+		        'password' => $pass,
+		        'fullname' => $fullname,
+		        'level' => $level,
 		        'logged_in' => TRUE
 			);
 
@@ -92,9 +94,9 @@ class Home extends CI_Controller
 			{
 				redirect('admin/admin');
 			}
-			elseif ($this->session->userdata('level')=='member') 
+			elseif ($this->session->userdata('level')=='user') 
 			{
-				redirect('member/member');
+				redirect('user/user');
 			}
 		}
 		else 
