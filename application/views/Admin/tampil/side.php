@@ -35,7 +35,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('Admin/admin/ndeleng_user') ?>"><i class="fa fa-circle-o"></i> Lihat User</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_user') ?>"><i class="fa fa-circle-o"></i> Pesawat</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_user') ?>"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>
         

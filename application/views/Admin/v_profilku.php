@@ -112,7 +112,7 @@
 
 		      	//Ajax Load data from ajax
 		      	$.ajax({
-			        url : "<?php echo base_url('user/user/edit_profile/')?>/" + id,
+			        url : "<?php echo base_url('admin/admin/edit_profile/')?>/" + id,
 			        type: "GET",
 			        dataType: "JSON",
 			        success: function(data)
@@ -138,7 +138,7 @@
 				{
 					if (true) 
 					{
-						window.location = url+"user/user/hapus/"+id;
+						window.location = url+"admin/admin/hapus/"+id;
 					}
 					else
 					{
@@ -152,7 +152,7 @@
 		    	var url;
 		      	if (save_method == 'update')
 		      	{
-		       		url = "<?php echo base_url('user/user/update_profil')?>";
+		       		url = "<?php echo base_url('admin/admin/update_profil')?>";
 		      	}
 
 		       // ajax adding data to database

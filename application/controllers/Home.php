@@ -74,6 +74,7 @@ class Home extends CI_Controller
 		{
 			foreach ($result->result() as $row) 
 			{
+				$id = $row->id;
 				$uname = $row->username;
 				$pass = $row->password;
 				$level = $row->level;
@@ -82,6 +83,7 @@ class Home extends CI_Controller
 
 			$newdata = array
 			(
+				'id' => $id,
 		        'username' => $uname,
 		        'password' => $pass,
 		        'fullname' => $fullname,
