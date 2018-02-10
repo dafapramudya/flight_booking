@@ -11,9 +11,9 @@ class My_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function cek_user($uname, $pass)
+	public function cek_user($email, $pass)
 	{
-		$qry = $this->db->query("select * from t_user where username='$uname' and password='$pass'");
+		$qry = $this->db->query("select * from t_user where email='$email' and password='$pass'");
 		return $qry;
 	}
 
@@ -26,6 +26,11 @@ class My_model extends CI_Model
 	{
 		$where = array('level' => 3);
 		return $this->db->get_where($table, $where);
+	}
+
+	public function tampil_kieh($table)
+	{
+		return $this->db->get($table);
 	}
 
 	public function tampil_user($table, $where)
@@ -58,5 +63,29 @@ class My_model extends CI_Model
 	{
 		$this->db->where($where);
 		$this->db->delete($table);
+	}
+
+	public function update_bro($where, $data, $table)
+	{
+		$this->db->update($table, $data, $where);
+		return $this->db->affected_rows();
+	}
+
+	public function select_from()
+	{
+		$this->db->select("rute_from");
+	    $this->db->from('t_rute');
+	    $this->db->group_by("rute_from");
+	    $query = $this->db->get();
+	    return $query;
+	}
+
+	public function select_to()
+	{
+		$this->db->select("rute_to");
+	    $this->db->from('t_rute');
+	    $this->db->group_by("rute_to");
+	    $query = $this->db->get();
+	    return $query;
 	}
 }

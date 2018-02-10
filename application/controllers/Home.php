@@ -19,10 +19,6 @@ class Home extends CI_Controller
 			{
 				redirect('user/user');
 			}
-			else
-			{
-				redirect('error/index');
-			}
 		}
 	}
 
@@ -66,9 +62,9 @@ class Home extends CI_Controller
 
 	public function loginProcess()
 	{
-		$uname = $this->input->post('username');
+		$email = $this->input->post('email');
 		$pass = md5($this->input->post('password'));
-		$result = $this->my_model->cek_user($uname, $pass);
+		$result = $this->my_model->cek_user($email, $pass);
 
 		if ($result->num_rows() > 0) 
 		{
@@ -77,6 +73,7 @@ class Home extends CI_Controller
 				$id = $row->id;
 				$uname = $row->username;
 				$pass = $row->password;
+				$email = $row->email;
 				$level = $row->level;
 				$fullname = $row->fullname;
 			}
@@ -86,6 +83,7 @@ class Home extends CI_Controller
 				'id' => $id,
 		        'username' => $uname,
 		        'password' => $pass,
+		        'email' => $email,
 		        'fullname' => $fullname,
 		        'level' => $level,
 		        'logged_in' => TRUE
@@ -103,9 +101,11 @@ class Home extends CI_Controller
 		}
 		else 
 		{
-			echo "Username & Password salah"; ?><br><br><br>
-			<?php echo "Username hint: njajal";?> <br>
-			<?php echo "Password hint: njajal";
+			?>
+				<script type="text/javascript">
+					alert("Email / Password Tidak Cocok!")
+				</script>
+			<?php
 		}
 
 	}

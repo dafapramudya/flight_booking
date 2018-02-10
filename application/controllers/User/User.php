@@ -25,9 +25,8 @@ class User extends CI_Controller
 			'error' => '',
 			'username' => $this->session->userdata('username')
 		);
-		$data['side']='user/tampil/side';
-		$data['content']='user/v_welcome';
-		$this->load->view('user/tampil/main',$data);
+
+		$this->load->view('user/index',$data);
 	}
 
 	public function profileku()

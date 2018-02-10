@@ -1,1045 +1,840 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Xtreme Travel a Travel Agency Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Xtreme Travel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //for-mobile-apps -->
-<link href="<?php echo base_url('assets/css/bootstrap.css') ?>" rel="stylesheet" type="text/css" media="all" />
-<link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css" media="all" />
-<link href="<?php echo base_url('assets/css/styles.css?v=1.6') ?>" rel="stylesheet">
-<!-- js -->
-<script src="<?php echo base_url('assets/js/jquery-1.11.1.min.js')?>"></script>
-<script src="<?php echo base_url('assets/js/scripts.js?v=1.7') ?>"></script>
-<!-- //js -->
-<!--FlexSlider-->
-		<link rel="stylesheet" href="<?php echo base_url('assets/css/flexslider.css')?>" type="text/css" media="screen" />
-		<script defer src="<?php echo base_url('assets/js/jquery.flexslider.js') ?>"></script>
-		<script type="text/javascript">
-		$(window).load(function(){
-		  $('.flexslider').flexslider({
-			animation: "slide",
-			start: function(slider){
-			  $('body').removeClass('loading');
-			}
-		  });
-		});
-	  </script>
-<!--End-slider-script-->
-<!-- pop-up-script -->
-<script src="<?php echo base_url('assets/js/jquery.chocolat.js') ?>"></script>
-		<link rel="stylesheet" href="<?php echo base_url('assets/css/chocolat.css') ?>" type="text/css" media="screen" charset="utf-8">
-		<!--light-box-files -->
-		<script type="text/javascript" charset="utf-8">
-		$(function() {
-			$('.view-seventh a').Chocolat();
-		});
-		</script>
-<!-- //pop-up-script -->
-<script src="<?php echo base_url('assets/js/easyResponsiveTabs.js') ?>" type="text/javascript"></script>
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="<?php echo base_url('assets/js/move-top.js') ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/easing.js') ?>"></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script>
-<!-- start-smoth-scrolling -->
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
-</head>
-	
-<body>
-<!-- banner -->
-	<div class="banner">
-		<div class="header-top">
-			<div class="container">
-				<div class="head-logo">
-					<a href="index.html"><span>X</span>treme Travel<i>Feeling Amazing Tour</i></a>
-				</div>
-				<div class="top-nav">
-					<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
-						<ul style="float: right; margin-top: -20px;">
-							<li style="display: inline; color: white; margin-right: 10px"><a href="<?php echo base_url('index.php/home/logine') ?>">Login</a></li>
-							<li style="display: inline; color: white;"><a href="<?php echo base_url('index.php/home/ndaftar') ?>">Daftar</a></li>
-						</ul>
-					</div>	
-				</div>	
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<div class="banner-info">
-			<div class="container">
-				<h1>Book Your Best Trip</h1>
-				<div class="sap_tabs">	
-					<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-						  <ul class="resp-tabs-list">
-							  <li style="font-size: 14.9px" class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab"><span><i class="glyphicon glyphicon-home" aria-hidden="true"></i>Hotels</span></li>
-							  <li style="font-size: 14.9px" class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span><i class="glyphicon glyphicon-plane" aria-hidden="true"></i>Flights</span></li>
-							  <li style="font-size: 14.9px" class="resp-tab-item grid3" aria-controls="tab_item-2" role="tab"><span><i class="glyphicon glyphicon-bed" aria-hidden="true"></i>Cars</span></li>
-							  <li style="font-size: 14.9px" class="resp-tab-item grid5" aria-controls="tab_item-3" role="tab"><span><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Destinations</span></li>
-							  <div class="clear"></div>
-						  </ul>				  	 
-							<div class="resp-tabs-container">
-								
-								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-									<div class="facts">
-										<div class="booking-form">
-											<div class="online_reservation">
-													<div class="b_room">
-														<div class="booking_room">
-															<div class="reservation">
-																<ul>		
-																	<li  class="span1_of_1 desti">
-																		 <div class="book_date">
-																			 <form>
-																				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																				<input type="text" placeholder="Departure City or Hotel" class="typeahead1 input-md form-control tt-input" required="">
-																			 </form>
-																		 </div>					
-																	 </li>
-																</ul>
-															</div>
-															<div class="reservation">
-																<ul>	
-																	 <li  class="span1_of_1">
-																		 <h5>Check In</h5>
-																		 <div class="book_date">
-																		<div class="book_date">
-																			 <form>
-																				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-																				<input class="date" id="datepicker" type="text" value="19/10/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2015';}" required="">
-																			 </form>
-																		</div>	
 
-																		 </div>		
-																	 </li>
-																	 <li  class="span1_of_1 left">
-																		 <h5>Check Out</h5>
-																		 <div class="book_date">
-																			<form>
-																				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-																				<input class="date" id="datepicker" type="text" value="19/10/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2015';}" required="">
-																			 </form>
-																		 </div>					
-																	 </li>
-																	 <li class="span1_of_1 adult">
-																		 <h5>Adults (18+)</h5>
-																		 
-																		 <div class="section_room">
-																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																					<option value="null">1</option>
-																					<option value="null">2</option>         
-																					<option value="AX">3</option>
-																					<option value="AX">4</option>
-																					<option value="AX">5</option>
-																					<option value="AX">6</option>
-																			  </select>
-																		 </div>	
-																	</li>
-																	<li class="span1_of_1 adult">
-																		 <h5>Children (0-17)</h5>
-																		 
-																		 <div class="section_room">
-																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																					<option value="null">1</option>
-																					<option value="null">2</option>         
-																					<option value="AX">3</option>
-																					<option value="AX">4</option>
-																					<option value="AX">5</option>
-																					<option value="AX">6</option>
-																			  </select>
-																		 </div>	
-																	</li>
-																	<li class="span1_of_1 adult">
-																		 <h5>Class</h5>
-																		 
-																		 <div class="section_room">
-																			  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																					<option value="null">Economy</option>
-																					<option value="null">Business</option>     
-																			  </select>
-																		 </div>	
-																	</li>
-																	 <div class="clearfix"></div>
-																</ul>
-																	
-																		<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.css')?>" />
-																		<script src="<?php echo base_url('assets/js/jquery-ui.js') ?>"></script>
-																		  <script>
-																				  $(function() {
-																					$( "#datepicker,#datepicker1" ).datepicker();
-																				  });
-																		  </script>
-																	
-															</div>
-															<div class="reservation">
-																<ul>	
-																	 <li class="span1_of_3">
-																			<div class="date_btn">
-																				<form>
-																					<input type="submit" value="Submit" />
-																				</form>
-																			</div>
-																	 </li>
-																	 <div class="clearfix"></div>
-																</ul>
-															</div>
-														</div>
-														<div class="clearfix"></div>
-													</div>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Travel &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/animate.css')?>">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/icomoon.css')?>">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/bootstrap.css') ?>">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/superfish.css') ?>">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/magnific-popup.css') ?>">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/bootstrap-datepicker.min.css') ?>">
+	<!-- CS Select -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/cs-select.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/cs-skin-border.css') ?>">
+	
+	<link rel="stylesheet" href="<?php echo base_url('assets/travel/css/style.css') ?>">
+
+
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+
+
+	<!-- Modernizr JS -->
+	<script src="<?php echo base_url('assets/travel/js/modernizr-2.6.2.min.js') ?>"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a href="index.html">Home</a></li>
+							<li>
+								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
+								<ul class="fh5co-sub-menu">
+									<li><a href="#">Family</a></li>
+									<li><a href="#">CSS3 &amp; HTML5</a></li>
+									<li><a href="#">Angular JS</a></li>
+									<li><a href="#">Node JS</a></li>
+									<li><a href="#">Django &amp; Python</a></li>
+								</ul>
+							</li>
+							<li><a href="flight.html">Flights</a></li>
+							<li><a href="hotel.html">Hotel</a></li>
+							<li><a href="car.html">Car</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#login">Masuk/Daftar</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- end:header-top -->
+	
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+				<div class="desc">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-5">
+								<div class="tabulation animate-box">
+
+								  <!-- Nav tabs -->
+								   <ul class="nav nav-tabs" role="tablist">
+								      <li role="presentation" class="active">
+								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Flights</a>
+								      </li>
+								      <li role="presentation">
+								    	   <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hotels</a>
+								      </li>
+								      <li role="presentation">
+								    	   <a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Packages</a>
+								      </li>
+								   </ul>
+
+								   <!-- Tab panes -->
+									<div class="tab-content">
+									 <div role="tabpanel" class="tab-pane active" id="flights">
+										<div class="row">
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Dari:</label>
+													<select data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
+												        <option value="4444">4444</option>
+												        <option value="Fedex">Fedex</option>
+												        <option value="Elite">Elite</option>
+												        <option value="Interp">Interp</option>
+												        <option value="Test">Test</option>
+												    </select>
+												</div>
 											</div>
-											<!---->
-										</div>	
-									</div>
-								</div>
-								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-									<div class="facts">
-										<div class="flights">
-											<div class="reservation">
-												<ul>		
-													<li  class="span1_of_1 desti1">
-														 <div class="book_date">
-															 <form>
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="From" class="typeahead1 input-md form-control tt-input" required="">
-															 </form>
-														 </div>					
-													 </li>
-													 <li  class="span1_of_1 desti1">
-														 <div class="book_date">
-															 <form>
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="To" class="typeahead1 input-md form-control tt-input" required="">
-															 </form>
-														 </div>					
-													 </li>
-													 <div class="clearfix"> </div>
-												</ul>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Ke:</label>
+													<select class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
+									                  <option selected="selected" disabled="true">Pilih Keberangkatan</option>
+									                  <?php $from = $this->my_model->select_to() ?>
+									                  <?php foreach ($from->result() as $fr) 
+									                  {?>
+									                  	<option value="<?php echo $fr->rute_to ?>"><?php echo $fr->rute_to ?></option>
+									                  <?php } ?>
+									                </select>
+												</div>
 											</div>
-											<div class="reservation">
-												<ul>	
-													 <li  class="span1_of_1">
-														 <h5>Departure</h5>
-														 <div class="book_date">
-														<form>
-															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input class="date" id="datepicker" type="text" value="19/10/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2015';}" required="">
-														 </form>
-														 </div>		
-													 </li>
-													 <li  class="span1_of_1 left">
-														 <h5>Return</h5>
-														 <div class="book_date">
-														<form>
-															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input class="date" id="datepicker" type="text" value="19/10/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2015';}" required="">
-														 </form>
-														 </div>					
-													 </li>
-													 <div class="clearfix"> </div>
-												</ul>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-start">Berangkat:</label>
+													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
+												</div>
 											</div>
-											<div class="reservation">
-												<ul>
-													<li class="span1_of_1 adult">
-														 <h5>Traveller</h5>
-														 
-														 <div class="section_room">
-															  <select id="1 Traveller" onchange="change_country(this.value)" class="frm-field required sect1">
-																	<option value="null">1 Traveller</option>
-																	<option value="null">2 Traveller</option>         
-																	<option value="AX">3 Traveller</option>
-																	<option value="AX">4 Traveller</option>
-																	<option value="AX">5 Traveller</option>
-																	<option value="AX">6 Traveller</option>
-															  </select>
-														 </div>	
-													</li>
-													<li class="span1_of_1 adult">
-															 <h5>Children (0-17)</h5>
-															 
-															 <div class="section_room">
-																  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																		<option value="null">1</option>
-																		<option value="null">2</option>         
-																		<option value="AX">3</option>
-																		<option value="AX">4</option>
-																		<option value="AX">5</option>
-																		<option value="AX">6</option>
-																  </select>
-															 </div>	
-														</li>
-														<li class="span1_of_1 adult">
-															 <h5>Class</h5>
-															 
-															 <div class="section_room">
-																  <select id="country" onchange="change_country(this.value)" class="frm-field required">
-																		<option value="null">Economy</option>
-																		<option value="null">Business</option>     
-																  </select>
-															 </div>	
-														</li>
-													<div class="clearfix"> </div>
-												</ul>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-end">Pulang:</label>
+													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
+												</div>
 											</div>
-											<div class="reservation">
-												<ul>	
-													 <li class="span1_of_3">
-															<div class="date_btn">
-																<form>
-																	<input type="submit" value="Search Flights" />
-																</form>
-															</div>
-													 </li>
-													 <div class="clearfix"></div>
-												</ul>
+											<div class="col-sm-12 mt">
+												<section>
+													<label for="class">Class:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>Economy</option>
+														<option value="economy">Economy</option>
+														<option value="first">First</option>
+														<option value="business">Business</option>
+													</select>
+												</section>
 											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-									<div class="facts">
-										<div class="cars">
-											<div class="reservation">
-												<ul>		
-													<li  class="span1_of_1 desti1">
-														 <div class="book_date">
-															 <form>
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="Pick Up Location" class="typeahead1 input-md form-control tt-input" required="">
-															 </form>
-														 </div>					
-													 </li>
-													 <li  class="span1_of_1 desti1">
-														 <div class="book_date">
-															 <form>
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="Drop Off Location" class="typeahead1 input-md form-control tt-input" required="">
-															 </form>
-														 </div>					
-													 </li>
-													 <div class="clearfix"> </div>
-												</ul>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Adult:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</section>
 											</div>
-											<div class="reservation">
-												<ul>	
-													 <li  class="span1_of_1">
-														 <h5>Pick Up Date</h5>
-														 <div class="book_date">
-														<form>
-															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input class="date" id="datepicker" type="text" value="19/10/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2015';}" required="">
-														 </form>
-														 </div>		
-													 </li>
-													 <li  class="span1_of_1 left">
-														 <h5>Drop Off Date</h5>
-														 <div class="book_date">
-															<form>
-																<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-																<input class="date" id="datepicker" type="text" value="19/10/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2015';}" required="">
-															</form>
-														 </div>					
-													 </li>
-													 <div class="clearfix"> </div>
-												</ul>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Children:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</section>
 											</div>
-											<div class="reservation">
-												<ul>	
-													 <li class="span1_of_3">
-															<div class="date_btn date_car">
-																<form>
-																	<input type="submit" value="Search Cars" />
-																</form>
-															</div>
-													 </li>
-													 <div class="clearfix"></div>
-												</ul>
+											<div class="col-xs-12">
+												<input type="submit" class="btn btn-primary btn-block" value="Search Flight">
 											</div>
 										</div>
-									</div>
-								</div>
-								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-3">
-									<div class="facts">
-										<div class="destination">
-											<div class="reservation">
-												<ul>		
-													<li  class="span1_of_1 desti">
-														 <div class="book_date">
-															 <form>
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="City ,Region Or Country" class="typeahead1 input-md form-control tt-input" required="">
-															 </form>
-														 </div>					
-													 </li>
-												</ul>
+									 </div>
+
+									 <div role="tabpanel" class="tab-pane" id="hotels">
+									 	<div class="row">
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+													<label for="from">City:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
+												</div>
 											</div>
-											<div class="reservation">
-												<ul>	
-													 <li class="span1_of_3">
-															<div class="date_btn date_car">
-																<form>
-																	<input type="submit" value="Reach Destinations" />
-																</form>
-															</div>
-													 </li>
-													 <div class="clearfix"></div>
-												</ul>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-start">Return:</label>
+													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-end">Check Out:</label>
+													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
+												</div>
+											</div>
+											<div class="col-sm-12 mt">
+												<section>
+													<label for="class">Rooms:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="economy">1</option>
+														<option value="first">2</option>
+														<option value="business">3</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Adult:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Children:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xs-12">
+												<input type="submit" class="btn btn-primary btn-block" value="Search Hotel">
 											</div>
 										</div>
+									 </div>
+
+									 <div role="tabpanel" class="tab-pane" id="packages">
+									 	<div class="row">
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">City:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Destination:</label>
+													<input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-start">Departs:</label>
+													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-end">Return:</label>
+													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
+												</div>
+											</div>
+											<div class="col-sm-12 mt">
+												<section>
+													<label for="class">Rooms:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="economy">1</option>
+														<option value="first">2</option>
+														<option value="business">3</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Adult:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Children:</label>
+													<select class="cs-select cs-skin-border">
+														<option value="" disabled selected>1</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xs-12">
+												<input type="submit" class="btn btn-primary btn-block" value="Search Packages">
+											</div>
+										</div>
+									 </div>
 									</div>
+
 								</div>
 							</div>
-					</div>
-				</div>
-				<script type="text/javascript">
-							$(document).ready(function () {
-								$('#horizontalTab').easyResponsiveTabs({
-									type: 'default', //Types: default, vertical, accordion           
-									width: 'auto', //auto or any width like 600px
-									fit: true   // 100% fit in a container
-								});
-							});
-						</script>
-				<div class="login">
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- //banner -->
-<!-- about-us -->
-	<div id="about" class="about">
-		<div class="container">
-			<h3>About Us</h3>
-			<p class="ever">To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
-			<div class="about-grids">
-				<div class="col-md-6 about-grid">
-					<div class="about-grid1">
-						<div class="itis">
-							<h4>voluptas nulla pariatur</h4>
-						</div>
-						<div class="hji">
-							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-						</div>
-						<div class="about-grid1-pos">
-							<img src="<?php echo base_url('assets/images/1.jpg') ?>" alt=" " class="img-responsive" />
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 about-grid">
-					<div class="about-grid2">
-						<div class="col-xs-2 about-grid2-left">
-							<p>01.</p>
-						</div>
-						<div class="col-xs-10 about-grid2-right">
-							<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus 
-								maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="about-grids">
-				<div class="col-md-6 about-grid">
-					<div class="about-grid2">
-						<div class="col-xs-2 about-grid2-left">
-							<p>02.</p>
-						</div>
-						<div class="col-xs-10 about-grid2-right">
-							<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus 
-								maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="col-md-6 about-grid">
-					<div class="about-grid1 about-grd1">
-						<div class="itis">
-							<h4>voluptas nulla pariatur</h4>
-						</div>
-						<div class="hji">
-							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-						</div>
-						<div class="about-grid1-pos1">
-							<img src="<?php echo base_url('assets/images/2.jpg') ?>" alt=" " class="img-responsive" />
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-<!-- //about-us -->
-<!-- about-bottom -->
-	<div class="about-bottom">
-		<div class="container">
-			<section class="slider">
-				<div class="flexslider">
-					<ul class="slides">
-						<li>
-							<div class="about-bottom-grids">
-								<div class="col-md-4 about-bottom-grid-left">
-									<h3>ea commodi consequatur</h3>
-									<p>Quibusdam et aut officiis debitis<span>Xtreme Travel</span></p>
+							<div class="desc2 animate-box">
+								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
+									<p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
+									<h2>Exclusive Limited Time Offer</h2>
+									<h3>Fly to Hong Kong via Los Angeles, USA</h3>
+									<span class="price">$599</span>
+									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
 								</div>
-								<div class="col-md-8 about-bottom-grid-right">
-									<div class="col-md-4 about-bottom-grid-right-grid">
-										<div class="about-bottom-grid-right-grid1">
-											<img src="<?php echo base_url('assets/images/4.jpg') ?>" alt=" " class="img-responsive" />
-											<div class="about-bottom-pos">
-												<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											</div>
-											<p>officiis debitis</p>
-										</div>
-									</div>
-									<div class="col-md-4 about-bottom-grid-right-grid">
-										<div class="about-bottom-grid-right-grid1">
-											<img src="<?php echo base_url('assets/images/5.jpg') ?>" alt=" " class="img-responsive" />
-											<div class="about-bottom-pos">
-												<span class="glyphicon glyphicon-random" aria-hidden="true"></span>
-											</div>
-											<p>officiis debitis</p>
-										</div>
-									</div>
-									<div class="col-md-4 about-bottom-grid-right-grid">
-										<div class="about-bottom-grid-right-grid1">
-											<img src="<?php echo base_url('assets/images/6.jpg') ?>" alt=" " class="img-responsive" />
-											<div class="about-bottom-pos">
-												<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-											</div>
-											<p>officiis debitis</p>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
 							</div>
-						</li>
-						<li>
-							<div class="about-bottom-grids">
-								<div class="col-md-4 about-bottom-grid-left">
-									<h3>ea commodi consequatur</h3>
-									<p>Quibusdam et aut officiis debitis<span>Xtreme Travel</span></p>
-								</div>
-								<div class="col-md-8 about-bottom-grid-right">
-									<div class="col-md-4 about-bottom-grid-right-grid">
-										<div class="about-bottom-grid-right-grid1">
-											<img src="<?php echo base_url('assets/images/8.jpg') ?>" alt=" " class="img-responsive" />
-											<div class="about-bottom-pos">
-												<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											</div>
-											<p>officiis debitis</p>
-										</div>
-									</div>
-									<div class="col-md-4 about-bottom-grid-right-grid">
-										<div class="about-bottom-grid-right-grid1">
-											<img src="<?php echo base_url('assets/images/9.jpg') ?>" alt=" " class="img-responsive" />
-											<div class="about-bottom-pos">
-												<span class="glyphicon glyphicon-random" aria-hidden="true"></span>
-											</div>
-											<p>officiis debitis</p>
-										</div>
-									</div>
-									<div class="col-md-4 about-bottom-grid-right-grid">
-										<div class="about-bottom-grid-right-grid1">
-											<img src="<?php echo base_url('assets/images/7.jpg') ?>" alt=" " class="img-responsive" />
-											<div class="about-bottom-pos">
-												<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-											</div>
-											<p>officiis debitis</p>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div id="fh5co-tours" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h3>Hot Tours</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="<?php echo base_url('assets/travel/images/place-1.jpg') ?>" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>New York</h3>
+								<span>3 nights + Flight 5*Hotel</span>
+								<span class="price">$1,000</span>
+								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
 							</div>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</div>
-	</div>
-<!-- //about-bottom -->
-<!-- awesome -->
-	<div class="awesome">
-		<div class="container">
-			<div class="col-md-4 awesome-left">
-				<h3>voluptas nulla</h3>
-				<p>Too many of us look upon Americans as dollar chasers.
-					This is a cruel libel, even if it is reiterated thoughtlessly.</p>
-			</div>
-			<div class="col-md-8 awesome-right">
-				<div class="col-md-4 awesome-right-grid">
-					<div class="awesome-right-grid1 view1 fifth-effect">
-						<img class="img-responsive" src="<?php echo base_url('assets/images/10.jpg') ?>" alt=" " />		
-						<div class="social-icons">
-							<ul>
-								<li><a href="#" class="p"></a></li>
-								<li><a href="#" class="facebook"></a></li>
-								<li><a href="#" class="twitter"></a></li>
-							</ul>
 						</div>
-						<div class="mask"></div>
 					</div>
-					<h4>man who chooses</h4>
-					<p>Place // Photography</p>		
-				</div>
-				<div class="col-md-4 awesome-right-grid">
-					<div class="awesome-right-grid1 view1 fifth-effect">
-						<img class="img-responsive" src="<?php echo base_url('assets/images/1.jpg') ?>" alt=" " />		
-						<div class="social-icons">
-							<ul>
-								<li><a href="#" class="p"></a></li>
-								<li><a href="#" class="facebook"></a></li>
-								<li><a href="#" class="twitter"></a></li>
-							</ul>
+					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="<?php echo base_url('assets/travel/images/place-2.jpg') ?>" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>Philippines</h3>
+								<span>4 nights + Flight 5*Hotel</span>
+								<span class="price">$1,000</span>
+								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
+							</div>
 						</div>
-						<div class="mask"></div>
 					</div>
-					<h4>man who chooses</h4>
-					<p>Place // Photography</p>		
-				</div>
-				<div class="col-md-4 awesome-right-grid">
-					<div class="awesome-right-grid1 view1 fifth-effect">
-						<img class="img-responsive" src="<?php echo base_url('assets/images/2.jpg') ?>" alt=" " />		
-						<div class="social-icons">
-							<ul>
-								<li><a href="#" class="p"></a></li>
-								<li><a href="#" class="facebook"></a></li>
-								<li><a href="#" class="twitter"></a></li>
-							</ul>
+					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="<?php echo base_url('assets/travel/images/place-3.jpg') ?>" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>Hongkong</h3>
+								<span>2 nights + Flight 4*Hotel</span>
+								<span class="price">$1,000</span>
+								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
+							</div>
 						</div>
-						<div class="mask"></div>
 					</div>
-					<h4>man who chooses</h4>
-					<p>Place // Photography</p>		
+					<div class="col-md-12 text-center animate-box">
+						<p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Offers <i class="icon-arrow-right22"></i></a></p>
+					</div>
 				</div>
-				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
-<!-- //awesome -->
-<!-- portfolio -->
-	<div id="portfolio" class="portfolio">
-		<div class="container">
-			<h3>Popular Places</h3>
-			<p class="ever">To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
-			<div class="main">
-                <div class="view view-seventh">
-					<a href="<?php echo base_url('assets/images/11.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/11-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+		<div id="fh5co-features">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box">
+
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-hotairballoon"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Family Travel</h3>
+								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+								<p><a href="#">Learn More</a></p>
+							</div>
 						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/12.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/12-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+					</div>
+
+					<div class="col-md-4 animate-box">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-search"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Travel Plans</h3>
+								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+								<p><a href="#">Learn More</a></p>
+							</div>
 						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/13.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/13-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-wallet"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Honeymoon</h3>
+								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+								<p><a href="#">Learn More</a></p>
+							</div>
 						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/14.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/14-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 animate-box">
+
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-wine"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Business Travel</h3>
+								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+								<p><a href="#">Learn More</a></p>
+							</div>
 						</div>
-					</a>
-                </div>
-            </div>
-			<div class="main">
-                <div class="view view-seventh">
-					<a href="<?php echo base_url('assets/images/15.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/15-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+					</div>
+
+					<div class="col-md-4 animate-box">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-genius"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Solo Travel</h3>
+								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+								<p><a href="#">Learn More</a></p>
+							</div>
 						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/16.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/16-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-chat"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Explorer</h3>
+								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+								<p><a href="#">Learn More</a></p>
+							</div>
 						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/17.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/17-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/12.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/12-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-						</div>
-					</a>
-                </div>
-            </div>
-			<div class="main">
-                <div class="view view-seventh">
-					<a href="<?php echo base_url('assets/images/14.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/14-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/12.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/12-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/13.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/13-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-						</div>
-					</a>
-                </div>
-                <div class="view view-seventh">
-                    <a href="<?php echo base_url('assets/images/11.jpg') ?>" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="<?php echo base_url('assets/images/11-.jpg') ?>" />
-						<div class="mask">
-							<h2>Necessitatibus</h2>
-							<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-						</div>
-					</a>
-                </div>
-            </div>
-		</div>
-	</div>
-<!-- //portfolio -->
-<!-- twitter-text -->
-	<div id="dfg" class="twitter-text">
-		<div class="container">
-			<div class="twitter-txt">
-				<h3><a href="mailto:info@example.com">info@example.com</a> Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero.</h3>
-				<p>about 13 hours,12 minutes ago</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-<!-- //twitter-text -->
-<!-- events -->
-	<div id="events" class="events">
-		<div class="container">
-			<h3>News & <span>Events</span></h3>
-			<p class="ever">To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
-			<div class="events-grids">
-				<div class="col-md-4 events-grid">
-					<div class="cal">
-						<img src="<?php echo base_url('assets/images/3.png') ?>" alt=" " class="img-responsive" />
-						<div class="cal-info">
-							<h4>molestiae consequatur</h4>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
-								voluptas nulla pariatur</p>
-						</div>
+
+		
+		<div id="fh5co-destination">
+			<div class="tour-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<ul id="fh5co-destination-list" class="animate-box">
+							<li class="one-forth text-center" style="background-image: url(images/place-1.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Los Angeles</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-2.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Hongkong</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-3.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Italy</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-4.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Philippines</h2>
+									</div>
+								</a>
+							</li>
+
+							<li class="one-forth text-center" style="background-image: url(images/place-5.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Japan</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-half text-center">
+								<div class="title-bg">
+									<div class="case-studies-summary">
+										<h2>Most Popular Destinations</h2>
+										<span><a href="#">View All Destinations</a></span>
+									</div>
+								</div>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-6.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Paris</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-7.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Singapore</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-8.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Madagascar</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-9.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Egypt</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-forth text-center" style="background-image: url(images/place-10.jpg); ">
+								<a href="#">
+									<div class="case-studies-summary">
+										<h2>Indonesia</h2>
+									</div>
+								</a>
+							</li>
+						</ul>		
 					</div>
 				</div>
-				<div class="col-md-4 events-grid">
-					<div class="cal">
-						<img src="<?php echo base_url('assets/images/3.png') ?>" alt=" " class="img-responsive" />
-						<div class="cal-info">
-							<h4>molestiae consequatur</h4>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
-								voluptas nulla pariatur</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 events-grid">
-					<div class="cal">
-						<img src="<?php echo base_url('assets/images/3.png') ?>" alt=" " class="img-responsive" />
-						<div class="cal-info">
-							<h4>molestiae consequatur</h4>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
-								voluptas nulla pariatur</p>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="events-grids1">
-				<div class="col-md-4 events-grid1">
-					<div class="events-grid11">
-						<span>01.</span>
-						<div class="events-grid11-info">
-							<h4><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><label>31 October 2015</label>molestiae consequatur</h4>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
-								voluptas nulla pariatur</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 events-grid1">
-					<div class="events-grid11">
-						<span>02.</span>
-						<div class="events-grid11-info">
-							<h4><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><label>31 October 2015</label>molestiae consequatur</h4>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
-								voluptas nulla pariatur</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 events-grid1">
-					<div class="events-grid11">
-						<span>03.</span>
-						<div class="events-grid11-info">
-							<h4><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><label>31 October 2015</label>molestiae consequatur</h4>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
-								voluptas nulla pariatur</p>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-<!-- //events -->
-<!-- subscribe -->
-	<div class="subscribe">
-		<div class="container">
-			<h3>Subscribe if you like what you see</h3>
-			<p class="ever">To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
-			<form>
-				<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-				<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-				<input type="submit" value="Subscribe">
-			</form>
-			<div class="men-heart-clock-twitter">
-				<div class="col-md-3 men-text">
-					<img src="<?php echo base_url('assets/images/men.png') ?>" alt=" " />
-					<div class="men-txt">
-						<p>230<span>Customers</span></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-3 men-text">
-					<img src="<?php echo base_url('assets/images/heart.png') ?>" alt=" " />
-					<div class="men-txt">
-						<p>12<span>Awards</span></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-3 men-text">
-					<img src="<?php echo base_url('assets/images/clock.png') ?>" alt=" " />
-					<div class="men-txt">
-						<p>2380<span>Completed Projects</span></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-3 men-text">
-					<img src="<?php echo base_url('assets/images/twitter.png') ?>" alt=" " />
-					<div class="men-txt">
-						<p>50890<span>Followers</span></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
-<!-- //subscribe -->
-<!--contact-->
-	<div id="mail" class="contact">
-		<div class="container">
-			<h3>How to Find Us</h3>
-			<p class="ever">To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
-			<div class="contact-grids">
-				<div class="col-md-7 contact-right">				
-					<form>
-						<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-						<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="text" value="Telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
-						<textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-						<input type="submit" value="Submit" >
-					</form>
-				</div>
-				<div class="col-md-5 contact-left">
-					<p>"Lorem Ipsum"is the common name dummy text often used in the design, printing, and type setting industriescommon name dummy text often used in the design, printing, and type setting industries. "</p>
-					<ul>
-						<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-							756 globel Place, Australia.
-						</li>					
-						<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-							+123 2222 222
-						</li>
-						<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-							<a href="mailto:info@example.com">mail@example.com</a>
-						</li>
-					</ul>
-				</div>						
-				<div class="clearfix"> </div>
-			</div>
-		</div>			
-	</div>
-	<div class="map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4376542.827441857!2d133.94238155277205!3d-25.73870281693212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2sin!4v1439377130002" allowfullscreen></iframe>
-	</div>
-<!--//contact-->
-<!-- footer-top -->
-	<div class="footer-top">
-		<div class="container">
-			<div class="col-md-3 footer-top-grid">
-				<h3>About <span>Travel</span></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque 
-					id arcu neque, at convallis est felis.</p>
-			</div>
-			<div class="col-md-3 footer-top-grid">
-				<h3>THE <span>TAGS</span></h3>
-				<div class="unorder">
-					<ul class="tag2">
-						<li><a href="#">awesome</a></li>
-						<li><a href="#">strategy</a></li>
-						<li><a href="#">development</a></li>
-					</ul>
-					<ul class="tag2">
-						<li><a href="#">css</a></li>
-						<li><a href="#">photoshop</a></li>
-						<li><a href="#">photography</a></li>
-						<li><a href="#">html</a></li>
-					</ul>
-					<ul class="tag2">
-						<li><a href="#">awesome</a></li>
-						<li><a href="#">strategy</a></li>
-						<li><a href="#">development</a></li>
-					</ul>
-					<ul class="tag2">
-						<li><a href="#">css</a></li>
-						<li><a href="#">photoshop</a></li>
-						<li><a href="#">photography</a></li>
-						<li><a href="#">html</a></li>
-					</ul>
-					<ul class="tag2">
-						<li><a href="#">awesome</a></li>
-						<li><a href="#">strategy</a></li>
-						<li><a href="#">development</a></li>
-					</ul>
+
+		<div id="fh5co-blog-section" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h3>Recent From Blog</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-3 footer-top-grid">
-				<h3>Latest <span>Tweets</span></h3>
-				<ul class="twi">
-					<li>I like this awesome freebie. Check it out <a href="mailto:info@example.com" class="mail">
-					@http://t.co/9vslJFpW</a> <span>ABOUT 15 MINS</span></li>
-					<li>I like this awesome freebie. You can view it online here<a href="mailto:info@example.com" class="mail">
-					@http://t.co/9vslJFpW</a> <span>ABOUT 2 HOURS AGO</span></li>
-				</ul>
+			<div class="container">
+				<div class="row row-bottom-padded-md">
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="fh5co-blog animate-box">
+							<a href="#"><img class="img-responsive" src="<?php echo base_url('assets/travel/images/place-1.jpg') ?>" alt=""></a>
+							<div class="blog-text">
+								<div class="prod-title">
+									<h3><a href="#">30% Discount to Travel All Around the World</a></h3>
+									<span class="posted_by">Sep. 15th</span>
+									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p><a href="#">Learn More...</a></p>
+								</div>
+							</div> 
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="fh5co-blog animate-box">
+							<a href="#"><img class="img-responsive" src="<?php echo base_url('assets/travel/images/place-2.jpg') ?>" alt=""></a>
+							<div class="blog-text">
+								<div class="prod-title">
+									<h3><a href="#">Planning for Vacation</a></h3>
+									<span class="posted_by">Sep. 15th</span>
+									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p><a href="#">Learn More...</a></p>
+								</div>
+							</div> 
+						</div>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="fh5co-blog animate-box">
+							<a href="#"><img class="img-responsive" src="<?php echo base_url('assets/travel/images/place-3.jpg') ?>" alt=""></a>
+							<div class="blog-text">
+								<div class="prod-title">
+									<h3><a href="#">Visit Tokyo Japan</a></h3>
+									<span class="posted_by">Sep. 15th</span>
+									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p><a href="#">Learn More...</a></p>
+								</div>
+							</div> 
+						</div>
+					</div>
+					<div class="clearfix visible-md-block"></div>
+				</div>
+
+				<div class="col-md-12 text-center animate-box">
+					<p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Post <i class="icon-arrow-right22"></i></a></p>
+				</div>
+
 			</div>
-			<div class="col-md-3 footer-top-grid">
-				<h3>Flickr <span>Feed</span></h3>
-				<div class="flickr-grids">
-					<div class="flickr-grid">
-						<a href="#"><img src="<?php echo base_url('assets/images/11.jpg') ?>" alt=" " class="img-responsive" /></a>
+		</div>
+		<!-- fh5co-blog-section -->
+		<div id="fh5co-testimonial" style="background-image:url(images/img_bg_1.jpg);">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Happy Clients</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="box-testimony animate-box">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
+							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+						</blockquote>
+						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
 					</div>
-					<div class="flickr-grid">
-						<a href="#"><img src="<?php echo base_url('assets/images/12.jpg') ?>" alt=" " class="img-responsive" /></a>
-					</div>
-					<div class="flickr-grid">
-						<a href="#"><img src="<?php echo base_url('assets/images/13.jpg') ?>" alt=" " class="img-responsive" /></a>
-					</div>
-					<div class="clearfix"> </div>
 					
-					<div class="flickr-grid">
-						<a href="#"><img src="<?php echo base_url('assets/images/16.jpg') ?>" alt=" " class="img-responsive" /></a>
+				</div>
+				<div class="col-md-4">
+					<div class="box-testimony animate-box">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
+							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
+						</blockquote>
+						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
 					</div>
-					<div class="flickr-grid">
-						<a href="#"><img src="<?php echo base_url('assets/images/14.jpg') ?>" alt=" " class="img-responsive" /></a>
+					
+					
+				</div>
+				<div class="col-md-4">
+					<div class="box-testimony animate-box">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
+							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+						</blockquote>
+						<p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
 					</div>
-					<div class="flickr-grid">
-						<a href="#"><img src="<?php echo base_url('assets/images/15.jpg') ?>" alt=" " class="img-responsive" /></a>
-					</div>
-					<div class="clearfix"> </div>
+					
 				</div>
 			</div>
-			<div class="clearfix"> </div>
 		</div>
 	</div>
-<!-- //footer-top -->
-<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-left">
-				<ul>
-					<li><a href="index.html"><i>X</i>treme Travel</a><span> |</span></li>
-					<li><p>The awesome agency. <span>0800 (123) 4567 // Australia 746 PO</span></p></li>
-				</ul>
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row row-bottom-padded-md">
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>About Travel</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Top Flights Routes</h3>
+							<ul>
+								<li><a href="#">Manila flights</a></li>
+								<li><a href="#">Dubai flights</a></li>
+								<li><a href="#">Bangkok flights</a></li>
+								<li><a href="#">Tokyo Flight</a></li>
+								<li><a href="#">New York Flights</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Top Hotels</h3>
+							<ul>
+								<li><a href="#">Boracay Hotel</a></li>
+								<li><a href="#">Dubai Hotel</a></li>
+								<li><a href="#">Singapore Hotel</a></li>
+								<li><a href="#">Manila Hotel</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Interest</h3>
+							<ul>
+								<li><a href="#">Beaches</a></li>
+								<li><a href="#">Family Travel</a></li>
+								<li><a href="#">Budget Travel</a></li>
+								<li><a href="#">Food &amp; Drink</a></li>
+								<li><a href="#">Honeymoon and Romance</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Best Places</h3>
+							<ul>
+								<li><a href="#">Boracay Beach</a></li>
+								<li><a href="#">Dubai</a></li>
+								<li><a href="#">Singapore</a></li>
+								<li><a href="#">Hongkong</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Affordable</h3>
+							<ul>
+								<li><a href="#">Food &amp; Drink</a></li>
+								<li><a href="#">Fare Flights</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="icon-twitter2"></i></a>
+								<a href="#"><i class="icon-facebook2"></i></a>
+								<a href="#"><i class="icon-instagram"></i></a>
+								<a href="#"><i class="icon-dribbble2"></i></a>
+								<a href="#"><i class="icon-youtube"></i></a>
+							</p>
+							<p>Copyright 2016 Free Html5 <a href="#">Module</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="footer-right">
-				<p>© 2016 Xtreme Travel. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
+		</footer>
+
+	
+
 	</div>
-<!-- //footer -->
-<!-- here stars scrolling icon -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-								
-			$().UItoTop({ easingType: 'easeOutQuart' });
-								
-			});
-	</script>
-<!-- //here ends scrolling icon -->
-</body>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="<?php echo base_url('assets/travel/js/jquery.min.js') ?>"></script>
+	<!-- jQuery Easing -->
+	<script src="<?php echo base_url('assets/travel/js/jquery.easing.1.3.js') ?>"></script>
+	<!-- Bootstrap -->
+	<script src="<?php echo base_url('assets/travel/js/bootstrap.min.js') ?>"></script>
+	<!-- Waypoints -->
+	<script src="<?php echo base_url('assets/travel/js/jquery.waypoints.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/travel/js/sticky.js') ?>"></script>
+
+	<!-- Stellar -->
+	<script src="<?php echo base_url('assets/travel/js/jquery.stellar.min.js') ?>"></script>
+	<!-- Superfish -->
+	<script src="<?php echo base_url('assets/travel/js/hoverIntent.js') ?>"></script>
+	<script src="<?php echo base_url('assets/travel/js/superfish.js') ?>"></script>
+	<!-- Magnific Popup -->
+	<script src="<?php echo base_url('assets/travel/js/jquery.magnific-popup.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/travel/js/magnific-popup-options.js') ?>"></script>
+	<!-- Date Picker -->
+	<script src="<?php echo base_url('assets/travel/js/bootstrap-datepicker.min.js') ?>"></script>
+	<!-- CS Select -->
+	<script src="<?php echo base_url('assets/travel/js/classie.js') ?>"></script>
+	<script src="<?php echo base_url('assets/travel/js/selectFx.js') ?>"></script>
+	
+	<!-- Main JS -->
+	<script src="<?php echo base_url('assets/travel/js/main.js') ?>"></script>
+
+	</body>
 </html>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 50px;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="<?php echo base_url('home/loginProcess'); ?>" method="post">
+              <div class="form-group">
+                <label for="email" class="form-control-label">Email:</label>
+                <input type="email" name="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-control-label">Password:</label>
+                <input type="password" name="password" class="form-control" id="password">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <span class="text-left">
+              <p class="text-left">Belum punya akun? <a href="<?php echo base_url('home/ndaftar') ?>">Daftar </a></p>
+            </span>
+          </div>
+        </div>
+      </div>
+  </div>

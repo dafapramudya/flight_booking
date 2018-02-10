@@ -35,7 +35,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('Admin/admin/ndeleng_user') ?>"><i class="fa fa-circle-o"></i> Pesawat</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_transport') ?>"><i class="fa fa-circle-o"></i> Transportasi</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_tipe_transport') ?>"><i class="fa fa-circle-o"></i> Tipe Transportasi</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_rute') ?>"><i class="fa fa-circle-o"></i> Rute</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_reservasi') ?>"><i class="fa fa-circle-o"></i> Reservasi</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_customer') ?>"><i class="fa fa-circle-o"></i> Customer</a></li>
             <li><a href="<?php echo base_url('Admin/admin/ndeleng_user') ?>"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>

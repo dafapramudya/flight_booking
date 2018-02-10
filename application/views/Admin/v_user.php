@@ -7,6 +7,7 @@
 	<div class="table-responsive">
 		<table id="table_id" class="table table-bordered table-striped table-hover">
 			<thead>
+				<h1 class="text-center">Daftar User</h1><br>
 				<tr>
 					<th>ID</th>
 					<th>Username</th>
@@ -98,7 +99,6 @@
 			        dataType: "JSON",
 			        success: function(data)
 			        {
-			        	$('[name="id"]').val(data.id);
 			        	$('[name="id"]').val(data.id);
 			        	$('[name="username"]').val(data.username);	
 			            $('[name="fullname"]').val(data.fullname);
