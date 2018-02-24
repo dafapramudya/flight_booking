@@ -71,21 +71,15 @@ class My_model extends CI_Model
 		return $this->db->affected_rows();
 	}
 
-	public function select_from()
+	public function show_bandara()
 	{
-		$this->db->select("rute_from");
-	    $this->db->from('t_rute');
-	    $this->db->group_by("rute_from");
-	    $query = $this->db->get();
-	    return $query;
+		$qry = $this->db->get('t_airport');
+		return $qry->result();
 	}
 
-	public function select_to()
+	public function tampilPencarian($depart_at, $ruteFrom, $ruteTo)
 	{
-		$this->db->select("rute_to");
-	    $this->db->from('t_rute');
-	    $this->db->group_by("rute_to");
-	    $query = $this->db->get();
-	    return $query;
+    	$query = $this->db->query("SELECT tr.depart_at, tr.arrive, tr.tanggal_terbang as tanggal, ta.kode as kode_asal, ta.bandara as asal, ta.kota as kota_asal, ke.kode as kode_tujuan, ke.bandara as tujuan, ke.kota as kota_tujuan, tr.price, t.logo as logo FROM t_rute tr INNER JOIN t_airport ta on (tr.rute_from = ta.id and ta.bandara LIKE '%$ruteFrom%') INNER JOIN (SELECT ta.* from t_airport ta) ke on (tr.rute_to = ke.id and ke.bandara LIKE '%$ruteTo%') INNER JOIN transportation t on (tr.transportationid = t.id) WHERE tr.tanggal_terbang = '$depart_at' order by tr.depart_at");
+    	return $query;
 	}
 }

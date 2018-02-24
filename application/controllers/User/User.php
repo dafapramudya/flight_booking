@@ -26,6 +26,8 @@ class User extends CI_Controller
 			'username' => $this->session->userdata('username')
 		);
 
+		$data['airport'] = $this->my_model->show_bandara();
+
 		$this->load->view('user/index',$data);
 	}
 

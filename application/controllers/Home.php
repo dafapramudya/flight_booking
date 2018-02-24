@@ -24,7 +24,8 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('index');
+		$data['airport'] = $this->my_model->show_bandara();
+		$this->load->view('index', $data);
 	}
 
 	public function logine()
@@ -109,4 +110,6 @@ class Home extends CI_Controller
 		}
 
 	}
+
+	
 }

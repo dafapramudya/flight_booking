@@ -140,147 +140,91 @@
 
                    <!-- Tab panes -->
                   <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="flights">
-                    <div class="row">
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <div class="input-field">
-                          <label for="from">Dari:</label>
-                          <select class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
-                                    <option selected="selected" disabled="true">Pilih Keberangkatan</option>
-                                    <?php $from = $this->my_model->select_from() ?>
-                                    <?php foreach ($from->result() as $fr) 
-                                    {?>
-                                      <option value="<?php echo $fr->rute_from ?>"><?php echo $fr->rute_from ?></option>
-                                    <?php } ?>
-                                  </select>
+                  <form action="<?php echo base_url('traveler/cari_rute') ?>" method="get">
+                    <div role="tabpanel" class="tab-pane active" id="flights">
+                      <div class="row">
+                        <div class="col-xxs-12 col-xs-6 mt">
+                          <div class="input-field">
+                            <label for="from">Dari:</label>
+                            <select name="rute_from" class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
+                              <option selected="selected" disabled="true">Pilih Keberangkatan</option>
+                              <?php
+                                foreach ($airport as $bandara) 
+                                {
+                                  echo '<option value="'.$bandara->bandara.'">'.$bandara->bandara.'</option>';
+                                }
+                              ?>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xxs-12 col-xs-6 mt">
+                          <div class="input-field">
+                            <label for="from">Ke:</label>
+                            <select name="rute_to" class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
+                              <option selected="selected" disabled="true">Pilih Keberangkatan</option>
+                              <?php
+                                foreach ($airport as $bandara) 
+                                {
+                                  echo '<option value="'.$bandara->bandara.'">'.$bandara->bandara.'</option>';
+                                }
+                              ?>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xxs-12 col-xs-6 mt alternate">
+                          <div class="input-field">
+                            <label for="date-start">Berangkat:</label>
+                            <input type="text" class="form-control" name="depart_at" id="date-start" placeholder="mm/dd/yyyy"/>
+                          </div>
+                        </div>
+                        <div class="col-xxs-12 col-xs-6 mt alternate">
+                          <div class="input-field">
+                            <label for="date-end"><input type="checkbox" id="pulange" value="pulang">Pulang:</label>
+                            <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-sm-12 mt">
+                          <section>
+                            <label for="class">Class:</label>
+                            <select class="cs-select cs-skin-border">
+                              <option value="" disabled selected>Economy</option>
+                              <option value="economy">Economy</option>
+                              <option value="first">First</option>
+                              <option value="business">Business</option>
+                            </select>
+                          </section>
+                        </div>
+                        <div class="col-xxs-12 col-xs-6 mt">
+                          <section>
+                            <label for="class">Adult:</label>
+                            <select class="cs-select cs-skin-border">
+                              <option value="" disabled selected>1</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </section>
+                        </div>
+                        <div class="col-xxs-12 col-xs-6 mt">
+                          <section>
+                            <label for="class">Children:</label>
+                            <select class="cs-select cs-skin-border">
+                              <option value="" disabled selected>1</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </section>
+                        </div>
+                        <div class="col-xs-12">
+                          <input type="submit" class="btn btn-primary btn-block" value="Search Flight">
                         </div>
                       </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <div class="input-field">
-                          <label for="from">Ke:</label>
-                          <select class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
-                                    <option selected="selected" disabled="true">Pilih Keberangkatan</option>
-                                    <?php $from = $this->my_model->select_to() ?>
-                                    <?php foreach ($from->result() as $fr) 
-                                    {?>
-                                      <option value="<?php echo $fr->rute_to ?>"><?php echo $fr->rute_to ?></option>
-                                    <?php } ?>
-                                  </select>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt alternate">
-                        <div class="input-field">
-                          <label for="date-start">Check In:</label>
-                          <input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt alternate">
-                        <div class="input-field">
-                          <label for="date-end">Check Out:</label>
-                          <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 mt">
-                        <section>
-                          <label for="class">Class:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>Economy</option>
-                            <option value="economy">Economy</option>
-                            <option value="first">First</option>
-                            <option value="business">Business</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <section>
-                          <label for="class">Adult:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <section>
-                          <label for="class">Children:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xs-12">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search Flight">
-                      </div>
-                    </div>
-                   </div>
+                     </div>
+                  </form>
 
-                   <div role="tabpanel" class="tab-pane" id="hotels">
-                    <div class="row">
-                      <div class="col-xxs-12 col-xs-12 mt">
-                        <div class="input-field">
-                          <label for="from">City:</label>
-                          <input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt alternate">
-                        <div class="input-field">
-                          <label for="date-start">Return:</label>
-                          <input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt alternate">
-                        <div class="input-field">
-                          <label for="date-end">Check Out:</label>
-                          <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 mt">
-                        <section>
-                          <label for="class">Rooms:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="economy">1</option>
-                            <option value="first">2</option>
-                            <option value="business">3</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <section>
-                          <label for="class">Adult:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <section>
-                          <label for="class">Children:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xs-12">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search Hotel">
-                      </div>
-                    </div>
-                   </div>
 
                    <div role="tabpanel" class="tab-pane" id="packages">
                     <div class="row">
@@ -811,3 +755,17 @@
 
   </body>
 </html>
+
+<script type="text/javascript">
+  $('#pulange').change(function() 
+  {
+    if ($(this).is(':checked')) 
+    {
+        $('#date-end').prop('disabled', false);
+    } 
+    else 
+    {
+        $('#date-end').prop('disabled', true);
+    }
+});
+</script>
