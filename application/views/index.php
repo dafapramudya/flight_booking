@@ -80,11 +80,11 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>KuyMabur</a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="<?php echo base_url('') ?>">Home</a></li>
 							<li>
 								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
 								<ul class="fh5co-sub-menu">
@@ -96,8 +96,6 @@
 								</ul>
 							</li>
 							<li><a href="flight.html">Flights</a></li>
-							<li><a href="hotel.html">Hotel</a></li>
-							<li><a href="car.html">Car</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#login">Masuk/Daftar</a></li>
 						</ul>
@@ -147,6 +145,15 @@
 										                  	}
 										                  ?>
 										                </select>
+										                <select name="rute_frome" class="cs-skin-border rute_frome" tabindex="-1" aria-hidden="true">
+										                  <option selected="selected" disabled="true">Pilih Keberangkatan</option>
+										                  <?php
+										                  	foreach ($airport as $bandara) 
+										                  	{
+										                  		echo '<option value="'.$bandara->kota.'('.$bandara->kode.') - '.$bandara->bandara.'"></option>';
+										                  	}
+										                  ?>
+										                </select>
 													</div>
 												</div>
 												<div class="col-xxs-12 col-xs-6 mt">
@@ -161,53 +168,58 @@
 										                  	}
 										                  ?>
 										                </select>
+										                <select name="rute_tone" class="cs-skin-border rute_tone" tabindex="-1" aria-hidden="true">
+										                  <option selected="selected" disabled="true">Pilih Keberangkatan</option>
+										                  <?php
+										                  	foreach ($airport as $bandara) 
+										                  	{
+										                  		echo '<option value="'.$bandara->kota.'('.$bandara->kode.') - '.$bandara->bandara.'"></option>';
+										                  	}
+										                  ?>
+										                </select>
 													</div>
 												</div>
 												<div class="col-xxs-12 col-xs-6 mt alternate">
 													<div class="input-field">
-														<label for="date-start">Berangkat:</label>
-														<input type="text" class="form-control" name="depart_at" id="date-start" placeholder="mm/dd/yyyy"/>
+														<label for="depart_at">Berangkat:</label>
+														<input type="date" class="form-control" name="depart_at" id="depart_at" />
 													</div>
 												</div>
 												<div class="col-xxs-12 col-xs-6 mt alternate">
 													<div class="input-field">
 														<label for="date-end"><input type="checkbox" id="pulange" value="pulang">Pulang:</label>
-														<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy" disabled="true" />
+														<input type="date" name="date-end" class="form-control date-end" placeholder="mm/dd/yyyy" disabled="true" />
 													</div>
 												</div>
-												<div class="col-sm-12 mt">
+												<!-- <div class="col-sm-12 mt">
 													<section>
 														<label for="class">Class:</label>
-														<select class="cs-select cs-skin-border">
-															<option value="" disabled selected>Economy</option>
-															<option value="economy">Economy</option>
-															<option value="first">First</option>
-															<option value="business">Business</option>
+														<select class="form-control" name="class">
+										                  	<?php
+										                  	foreach ($class as $bandara) 
+										                  	{
+										                  		echo '<option value="'.$bandara->description.'">'.$bandara->description.'</option>';
+										                  	}
+										                  	?>
 														</select>
 													</section>
-												</div>
-												<div class="col-xxs-12 col-xs-6 mt">
+												</div> -->
+												<div class="col-xxs-12 col-xs-4 mt">
 													<section>
-														<label for="class">Adult:</label>
-														<select class="cs-select cs-skin-border">
-															<option value="" disabled selected>1</option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-														</select>
+														<label for="class">Dewasa:</label>
+														<input type="number" min="1" value="1" name="adult" class="form-control">
 													</section>
 												</div>
-												<div class="col-xxs-12 col-xs-6 mt">
+												<div class="col-xxs-12 col-xs-4 mt">
 													<section>
-														<label for="class">Children:</label>
-														<select class="cs-select cs-skin-border">
-															<option value="" disabled selected>1</option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-														</select>
+														<label for="class">Anak-anak:</label>
+														<input type="number" min="0" value="0" name="child" class="form-control">
+													</section>
+												</div>
+												<div class="col-xxs-12 col-xs-4 mt">
+													<section>
+														<label for="class">Bayi:</label>
+														<input type="number" min="0" value="0" name="infant" class="form-control">
 													</section>
 												</div>
 												<div class="col-xs-12">
@@ -709,16 +721,21 @@
   	{
 	    if ($(this).is(':checked')) 
 	    {
-	        $('#date-end').prop('disabled', false);
+	        $('.date-end').prop('disabled', false);
 	    } 
 	    else 
 	    {
-	        $('#date-end').prop('disabled', true);
+	        $('.date-end').prop('disabled', true);
 	    }
 	});
 
 	$(document).ready(function() {
         $('.rute_from').select2();
         $('.rute_to').select2();
+
+		$('.rute_frome').hide(); 
+		$('.rute_tone').hide();       
     });
+
+    document.getElementById('depart_at').valueAsDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
   </script>

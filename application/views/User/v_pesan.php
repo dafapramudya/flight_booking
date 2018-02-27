@@ -90,36 +90,9 @@
 	<body style="background-color: #e6eaed">
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
-
-		<header id="fh5co-header-section">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="<?php echo base_url('') ?>"><i class="icon-airplane"></i>KuyMabur</a></h1>
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
-							<li>
-								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Family</a></li>
-									<li><a href="#">CSS3 &amp; HTML5</a></li>
-									<li><a href="#">Angular JS</a></li>
-									<li><a href="#">Node JS</a></li>
-									<li><a href="#">Django &amp; Python</a></li>
-								</ul>
-							</li>
-							<li><a href="flight.html">Flights</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="#" data-toggle="modal" data-target="#login">Masuk/Daftar</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-
 		<!-- end:header-top -->
+
+		<?php $this->load->view('user/header'); ?>
 	
 		<div class="container" style="height: 100%;">
 			<div class="row">
@@ -151,7 +124,7 @@
 						<br>
 					</div>
 				</div>
-				<form action="<?php echo base_url('traveler/pesan') ?>" method="post">
+				<form action="<?php echo base_url('user/user/pesan') ?>" method="post">
 					<table>
 						<div class="col-md-12">
 							<thead>
@@ -166,21 +139,8 @@
 						<br>
 					</table>
 					<div class="panel panel-default">
-						<div class="panel-body">
-							<table>
-								<thead><th class="col-md-7"><tr><img src="<?php echo base_url('assets/img/login.png') ?>" style="width: 100px; height: 100px; margin: 20px;"></tr></th></thead>
-								<th>
-									<tr><span style="color: black; display: inline;">Masuk / Daftar dan nikmati fitur khusus untuk member KuyMabur</span></tr>
-								</th>
-								<th>
-									<tr><a href="#" class="btn btn-info" data-toggle="modal" data-target="#login" style="float: right; margin: 50px;">LOGIN</a></tr>
-								</th>
-							</table>
-						</div>
-					</div>
-					<div class="panel panel-default">
 					  <div class="panel-heading"><p style="color: black; font-size: 17px; margin: 20px">Data Pemesan<p></div>
-					  <div class="panel-body" >
+					  <div class="panel-body">
 					  	<div class="col-md-12">
 							<div style="width: 100%">
 								<?php foreach ($reserve as $res) { ?>
@@ -189,18 +149,19 @@
 								<input type="hidden" class="form-control" value="<?php echo $res->price ?>" name="price">
 								<?php } ?>
 								<label for="fullname">Nama Lengkap</label>
-								<input type="text" name="fullname" class="form-control">
+								<input type="text" name="fullname" value="<?php echo $this->session->userdata('fullname') ?>" class="form-control">
 							</div>
 							<div class="col-md-12" style="padding: 0; margin: 0;">
 								<label for="nohp">No. Handphone</label>
-								<input type="tell" name="nohp" class="form-control" placeholder="EX: +6282211245610">
+								<input type="tell" value="<?php echo $this->session->userdata('phone'); ?>" name="nohp" class="form-control" placeholder="Contoh: +6282211245610">
 							</div>
 							<div class="col-md-12" style="padding: 0; margin: 0;">
 								<label for="email">Email</label>
-								<input type="email" name="email" class="form-control" placeholder="EX: someone@someone.com">
+								<input type="email" name="email" class="form-control" placeholder="Contoh: someone@someone.com" value="<?php echo $this->session->userdata('email'); ?>">
 							</div>
 							<div class="col-md-12" style="padding: 0; margin: 0;">
 								<label for="alamat">Alamat</label>
+								<input type="hidden" name="qty" value="<?php echo $this->uri->segment(4)?>">
 								<input type="text" name="alamat" class="form-control">
 							</div>
 							<div class="col-md-12">
@@ -379,7 +340,7 @@
 						foreach ($seat as $s) {
 							for ($i=1; $i <= $s->seat_qty; $i++) { ?>
 							<div class="col-md-2">
-								<input type="checkbox" class="form-control" name="seat[]" value="<?php echo $i; ?>" <?php foreach($filter as $f) { if($i == $f->seat_code){ echo "disabled"; } } ?>><?php echo $i; ?>
+								<input type="checkbox" class="form-control" name="seat[]" value="<?php echo $i; ?>" <?php foreach($filter as $f) { if($i == $f->seat_code){ echo " disabled"; } } ?>><?php echo $i; ?>
 							</div>
 							<?php
 							} 
@@ -557,7 +518,7 @@
   <script type="text/javascript">
   	$(document).ready(function() {
         $("input[name='seat[]']").change(function(){
-        	var maxSelect = <?php echo ($adult+$child+$infant); ?><?php } ?>;
+        	var maxSelect = <?php echo ($adult+$child+$infant);	 ?><?php } ?>;
         	var cnt = $("input[name='seat[]']:checked").length;
         	if (cnt > maxSelect) 
         	{

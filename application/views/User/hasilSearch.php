@@ -88,33 +88,7 @@
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 
-		<header id="fh5co-header-section" class="sticky-banner">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="<?php echo base_url('home') ?>"><i class="icon-airplane"></i>KuyMabur</a></h1>
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li>
-								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Family</a></li>
-									<li><a href="#">CSS3 &amp; HTML5</a></li>
-									<li><a href="#">Angular JS</a></li>
-									<li><a href="#">Node JS</a></li>
-									<li><a href="#">Django &amp; Python</a></li>
-								</ul>
-							</li>
-							<li><a href="flight.html">Flights</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="#" data-toggle="modal" data-target="#login">Masuk/Daftar</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
+		<?php $this->load->view('user/header'); ?>
 
 		<!-- end:header-top -->
 	
@@ -125,7 +99,7 @@
 						<thead>
 							<?php
 							$hasil= $rute2->result();
-
+							
 							if (empty($hasil))
 							{?>
 								<tr><big style="font-size: 30px; color: #369ef7; margin-left: 20px;"><?php echo $rute_from ?> <i class="glyphicon glyphicon-arrow-right"></i> <?php echo $rute_to ?></big></tr>
@@ -134,7 +108,6 @@
 							{?>
 								<tr><big style="font-size: 30px; color: #369ef7; margin-left: 20px;"><?php echo $hasil[0]->kota_asal ?> (<?php echo $hasil[0]->kode_asal ?>) - <?php echo $hasil[0]->asal ?> <i class="glyphicon glyphicon-arrow-right"></i> <?php echo $hasil[0]->kota_tujuan ?> (<?php echo $hasil[0]->kode_tujuan ?>) - <?php echo $hasil[0]->tujuan ?></big></tr>
 							<?php } ?>
-							
 						</thead>
 					</table>
 					<table>
@@ -180,7 +153,7 @@
 										<td><?php echo $durasi ?> Jam</td>
 										<td>Rp. <?php echo $harga ?></td>
 										<td>
-											<a href="<?php echo base_url('traveler/prepare_pesan/'.$trute->id) ?>" class="btn btn-info">PESAN</a>
+											<a href="<?php echo base_url('user/user/prepare_pesan/'.$trute->id) ?>" class="btn btn-info">PESAN</a>
 										</td>
 									</tr>
 								<?php } ?>

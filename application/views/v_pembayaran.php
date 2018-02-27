@@ -116,83 +116,77 @@
 			</div>
 		</header>
 
-		<!-- end:header-top -->
-	
-		<div class="container" style="height: 100%">
-			<div class="row">
-				<div class="panel panel-default" style="height: 110px; margin-top: 30px;">
-					<table>
+		<div class="container" style="margin-top:50px">
+			<div class="col-md-9">
+				<table>
+					<div class="col-md-12">
 						<thead>
-							<?php
-							$hasil= $rute2->result();
-
-							if (empty($hasil))
-							{?>
-								<tr><big style="font-size: 30px; color: #369ef7; margin-left: 20px;"><?php echo $rute_from ?> <i class="glyphicon glyphicon-arrow-right"></i> <?php echo $rute_to ?></big></tr>
-							<?php }
-							else
-							{?>
-								<tr><big style="font-size: 30px; color: #369ef7; margin-left: 20px;"><?php echo $hasil[0]->kota_asal ?> (<?php echo $hasil[0]->kode_asal ?>) - <?php echo $hasil[0]->asal ?> <i class="glyphicon glyphicon-arrow-right"></i> <?php echo $hasil[0]->kota_tujuan ?> (<?php echo $hasil[0]->kode_tujuan ?>) - <?php echo $hasil[0]->tujuan ?></big></tr>
-							<?php } ?>
-							
-						</thead>
-					</table>
-					<table>
-						<thead>
-							<tr><big style="color: #369ef7; margin-left: 20px;"><?php echo $depart_at ?></big></tr>
-						</thead>
-						<thead><a href="<?php echo base_url('') ?>" class="btn btn-info" style="float: right; margin-right: 20px;">Ganti Pencarian</a></thead>
-						
-					</table>
-				</div>
-				<div class="panel panel-default" style="padding: 20px">
-					<br>
-					<?php $hasile = $rute->result();
-
-					if (empty($hasile)) 
-					{
-						echo "<div class='text-center'>Maaf penerbangan tidak tersedia, silahkan coba tanggal lain atau ganti pencarian Anda</div><br>";
-					}else{
-					?>
-						<table class="table table-bordered table-striped table-hover">
-							<thead>
-								<!-- <h1 class="text-center">Hasil Pencarian</h1><br> -->
+							<th>
 								<tr>
-									<th>Pesawat</th>
-									<th>Berangkat</th>
-									<th>Tiba</th>
-									<th>Durasi</th>
-									<th>Harga</th>
-									<th>Aksi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php
-								foreach($hasile as $trute)
-								{
-									$harga = number_format($trute->price, 0, ",", ".");
-									$durasi = $trute->arrive - $trute->depart_at;
-								?>
-									<tr>
-										<td><?php echo $trute->pesawat ?></td>
-										<td><?php echo $trute->depart_at ?><br><?php echo $trute->asal ?></td>
-										<td><?php echo $trute->arrive ?><br><?php echo $trute->tujuan ?></td>
-										<td><?php echo $durasi ?> Jam</td>
-										<td>Rp. <?php echo $harga ?></td>
-										<td>
-											<a href="<?php echo base_url('traveler/prepare_pesan/'.$trute->id) ?>" class="btn btn-info">PESAN</a>
-										</td>
-									</tr>
-								<?php } ?>
-							</tbody>
-						</table>
-					<?php } ?>
+									<strong style="font-size: 20px;"> Pembayaran</strong>
+								</tr>	
+							</th>
+						</thead>
+					</div>
+					<br>
+					<br>
+				</table>
+			</div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><b>Transfer</b></strong>
+					</div>
+					<div class="panel-body">
+						Silahkan transfer lewat ATM ke nomor rekening berikut:<br><br>
+						<strong>BRI : <b style="float: right;"> XXXX - XXXX - XXXX - XXXX</b></strong><br><br>
+						<strong>BCA : <b style="float: right;"> XXXX - XXXX - XXXX - XXXX</b></strong><br><br>
+						<strong>MANDIRI : <b style="float: right;"> XXXX - XXXX - XXXX - XXXX</b></strong><br><br>
+						<strong>BNI : <b style="float: right;"> XXXX - XXXX - XXXX - XXXX</b></strong><br><br><br>
+
+						<p>Sudah melakukan pembayaran?</p>
+						<form action="<?php echo base_url('traveler/wait_confirmation') ?>" method="post">
+							<input type="file" name="fotoBarangBukti" class="form-control"><br><br>
+							<button type="submit" class="btn btn-info">Upload</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						BOOKING ID
+					</div>
+					<div class="panel-body">
+						<b><?php echo $resCode; ?></b>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						PERJALANANMU
+					</div>
+					<div class="panel-body">
+						Terbang
+						<br>
+						<?php echo $tgl_terbang; ?>
+						<br>
+						<br>
+						<?php
+						$hasil= $bayar->result();
+						echo $hasil[0]->kota_asal;
+						?> (<?php echo $hasil[0]->kode_asal; ?>) <i class="glyphicon glyphicon-arrow-right"></i> <?php echo $hasil[0]->kota_tujuan; ?> (<?php echo $hasil[0]->kode_tujuan; ?>)
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						NAMA PEMESAN
+					</div>
+					<div class="panel panel-body">
+						<?php echo $namapemesan; ?>
+					</div>
 				</div>
 			</div>
 		</div>
-
-	
-
 	</div>
 	<!-- END fh5co-page -->
 

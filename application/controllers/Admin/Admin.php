@@ -437,6 +437,14 @@ class Admin extends CI_Controller
 		$this->load->view('admin/tampil/main',$data);
 	}
 
+	public function ndeleng_reqKonfirm()
+	{	
+		$data['show']=$this->my_model->tampil_kieh('confirm_reser')->result();
+		$data['side']='admin/tampil/side';
+		$data['content']='admin/v_req_pembayaran';
+		$this->load->view('admin/tampil/main',$data);
+	}
+
 	public function edit_reser($id)
 	{
 		$where = array
@@ -445,6 +453,17 @@ class Admin extends CI_Controller
 		);
 
 		$data = $this->my_model->get_by_id('reservation', $where);
+		echo json_encode($data);
+	}
+
+	public function edit_konfirm($id)
+	{
+		$where = array
+		(
+			'id' => $id
+		);
+
+		$data = $this->my_model->get_by_id('confirm_reser', $where);
 		echo json_encode($data);
 	}
 
@@ -518,10 +537,46 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 	}
 
+	public function update_konfirm()
+	{
+		$id = $this->input->post('id');
+		$reser_code = $this->input->post('reservation_code');
+		$customerid = $this->input->post('customerid');
+		$gambar_bukti = $this->input->post('gambar_bukti');
+		$status = $this->input->post('status');
+	
+		$data = array
+		(
+			'id' => $id,
+			'reser_code' => $reser_code,
+			'customer_id' => $customerid,
+			'gambar_bukti' => $gambar_bukti,
+			'status' => $status
+		);
+
+		$where = array
+		(
+			'id' => $id
+		);
+
+		$this->my_model->update_bro($where, $data, 'confirm_reser');
+		echo json_encode(array("status" => TRUE));
+		// $this->modelku->update_data($where, $data, 't_barang');
+		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+	}
+
 	public function ngapus_reser($id)
 	{
 		$where = array('id' => $id);
 		$this->my_model->delete_by_id($where, 'reservation');
+		echo json_encode(array("status" => TRUE));
+		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+	}
+
+	public function ngapus_konfirm($id)
+	{
+		$where = array('id' => $id);
+		$this->my_model->delete_by_id($where, 'confirm_reser');
 		echo json_encode(array("status" => TRUE));
 		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 	}

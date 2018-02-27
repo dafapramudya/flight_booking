@@ -40,6 +40,7 @@
             <li><a href="<?php echo base_url('Admin/admin/ndeleng_rute') ?>"><i class="fa fa-circle-o"></i> Rute</a></li>
             <li><a href="<?php echo base_url('Admin/admin/ndeleng_reservasi') ?>"><i class="fa fa-circle-o"></i> Reservasi</a></li>
             <li><a href="<?php echo base_url('Admin/admin/ndeleng_customer') ?>"><i class="fa fa-circle-o"></i> Customer</a></li>
+            <li><a href="<?php echo base_url('Admin/admin/ndeleng_reqKonfirm') ?>"><i class="fa fa-circle-o"></i> Request Konfirmasi Pembayaran</a></li>
             <li><a href="<?php echo base_url('Admin/admin/ndeleng_user') ?>"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>

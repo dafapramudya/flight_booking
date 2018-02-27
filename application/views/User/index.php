@@ -61,6 +61,8 @@
   
   <link rel="stylesheet" href="<?php echo base_url('assets/travel/css/style.css') ?>">
 
+  <link href="<?php echo base_url('_tamplate/plugins/select2/select2.css') ?>" rel="stylesheet" />
+
 
   <!-- Modernizr JS -->
   <script src="<?php echo base_url('assets/travel/js/modernizr-2.6.2.min.js') ?>"></script>
@@ -74,46 +76,6 @@
     <div id="fh5co-wrapper">
     <div id="fh5co-page">
 
-    <header id="fh5co-header-section" class="sticky-banner">
-      <div class="container">
-        <div class="nav-header">
-          <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-          <h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
-          <!-- START #fh5co-menu-wrap -->
-          <nav id="fh5co-menu-wrap" role="navigation">
-            <ul class="sf-menu" id="fh5co-primary-menu">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li>
-                <a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
-                <ul class="fh5co-sub-menu">
-                  <li><a href="#">Family</a></li>
-                  <li><a href="#">CSS3 &amp; HTML5</a></li>
-                  <li><a href="#">Angular JS</a></li>
-                  <li><a href="#">Node JS</a></li>
-                  <li><a href="#">Django &amp; Python</a></li>
-                </ul>
-              </li>
-              <li><a href="flight.html">Flights</a></li>
-              <li><a href="hotel.html">Hotel</a></li>
-              <li><a href="car.html">Car</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $this->session->userdata('fullname'); ?></a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li><a href="#">My Profile</a></li>
-                     <li><a href="#">Another action</a></li>
-                     <li><a href="#">Something else here</a></li>
-                     <li class="divider"></li>
-                     <li><a href="<?php echo base_url('user/user/logout') ?>">Logout</a></li>
-                  </ul>
-              </li>
-                
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-
     <!-- end:header-top -->
   
     <div class="fh5co-hero">
@@ -122,7 +84,7 @@
         <div class="desc">
           <div class="container">
             <div class="row">
-              <div class="col-sm-5 col-md-5">
+              <div class="col-sm-7 col-md-7">
                 <div class="tabulation animate-box">
 
                   <!-- Nav tabs -->
@@ -130,92 +92,75 @@
                       <li role="presentation" class="active">
                         <a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Flights</a>
                       </li>
-                      <li role="presentation">
+                      <!-- <li role="presentation">
                          <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hotels</a>
                       </li>
                       <li role="presentation">
                          <a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Packages</a>
-                      </li>
+                      </li> -->
                    </ul>
 
                    <!-- Tab panes -->
                   <div class="tab-content">
-                  <form action="<?php echo base_url('traveler/cari_rute') ?>" method="get">
+                  <form action="<?php echo base_url('user/user/cari_rute') ?>" method="get">
                     <div role="tabpanel" class="tab-pane active" id="flights">
                       <div class="row">
                         <div class="col-xxs-12 col-xs-6 mt">
                           <div class="input-field">
                             <label for="from">Dari:</label>
-                            <select name="rute_from" class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
-                              <option selected="selected" disabled="true">Pilih Keberangkatan</option>
-                              <?php
-                                foreach ($airport as $bandara) 
-                                {
-                                  echo '<option value="'.$bandara->bandara.'">'.$bandara->bandara.'</option>';
-                                }
-                              ?>
-                            </select>
+                            <select name="rute_from" class="cs-skin-border rute_from" tabindex="-1" aria-hidden="true">
+                                      <option selected="selected" disabled="true">Pilih Keberangkatan</option>
+                                      <?php
+                                        foreach ($airport as $bandara) 
+                                        {
+                                          echo '<option value="'.$bandara->bandara.'">'.$bandara->kota.' ('.$bandara->kode.') - '.$bandara->bandara.'</option>';
+                                        }
+                                      ?>
+                                    </select>
                           </div>
                         </div>
                         <div class="col-xxs-12 col-xs-6 mt">
                           <div class="input-field">
                             <label for="from">Ke:</label>
-                            <select name="rute_to" class="cs-select cs-skin-border" tabindex="-1" aria-hidden="true">
-                              <option selected="selected" disabled="true">Pilih Keberangkatan</option>
-                              <?php
-                                foreach ($airport as $bandara) 
-                                {
-                                  echo '<option value="'.$bandara->bandara.'">'.$bandara->bandara.'</option>';
-                                }
-                              ?>
-                            </select>
+                            <select name="rute_to" class="cs-skin-border rute_to" tabindex="-1" aria-hidden="true">
+                                      <option selected="selected" disabled="true">Pilih Tujuan</option>
+                                      <?php
+                                        foreach ($airport as $bandara) 
+                                        {
+                                          echo '<option value="'.$bandara->bandara.'">'.$bandara->kota.' ('.$bandara->kode.') - '.$bandara->bandara.'</option>';
+                                        }
+                                      ?>
+                                    </select>
                           </div>
                         </div>
                         <div class="col-xxs-12 col-xs-6 mt alternate">
                           <div class="input-field">
-                            <label for="date-start">Berangkat:</label>
-                            <input type="text" class="form-control" name="depart_at" id="date-start" placeholder="mm/dd/yyyy"/>
+                            <label for="depart_at">Berangkat:</label>
+                            <input type="date" class="form-control" name="depart_at" id="depart_at" />
                           </div>
                         </div>
                         <div class="col-xxs-12 col-xs-6 mt alternate">
                           <div class="input-field">
                             <label for="date-end"><input type="checkbox" id="pulange" value="pulang">Pulang:</label>
-                            <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy" disabled="true" />
+                            <input type="date" name="date-end" class="form-control date-end" placeholder="mm/dd/yyyy" disabled="true" />
                           </div>
                         </div>
-                        <div class="col-sm-12 mt">
+                        <div class="col-xxs-12 col-xs-4 mt">
                           <section>
-                            <label for="class">Class:</label>
-                            <select class="cs-select cs-skin-border">
-                              <option value="" disabled selected>Economy</option>
-                              <option value="economy">Economy</option>
-                              <option value="first">First</option>
-                              <option value="business">Business</option>
-                            </select>
+                            <label for="class">Dewasa:</label>
+                            <input type="number" min="1" value="1" name="adult" class="form-control">
                           </section>
                         </div>
-                        <div class="col-xxs-12 col-xs-6 mt">
+                        <div class="col-xxs-12 col-xs-4 mt">
                           <section>
-                            <label for="class">Adult:</label>
-                            <select class="cs-select cs-skin-border">
-                              <option value="" disabled selected>1</option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                            </select>
+                            <label for="class">Anak-anak:</label>
+                            <input type="number" min="0" value="0" name="child" class="form-control">
                           </section>
                         </div>
-                        <div class="col-xxs-12 col-xs-6 mt">
+                        <div class="col-xxs-12 col-xs-4 mt">
                           <section>
-                            <label for="class">Children:</label>
-                            <select class="cs-select cs-skin-border">
-                              <option value="" disabled selected>1</option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                            </select>
+                            <label for="class">Bayi:</label>
+                            <input type="number" min="0" value="0" name="infant" class="form-control">
                           </section>
                         </div>
                         <div class="col-xs-12">
@@ -224,85 +169,8 @@
                       </div>
                      </div>
                   </form>
-
-
-                   <div role="tabpanel" class="tab-pane" id="packages">
-                    <div class="row">
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <div class="input-field">
-                          <label for="from">City:</label>
-                          <input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <div class="input-field">
-                          <label for="from">Destination:</label>
-                          <input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt alternate">
-                        <div class="input-field">
-                          <label for="date-start">Departs:</label>
-                          <input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-                        </div>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt alternate">
-                        <div class="input-field">
-                          <label for="date-end">Return:</label>
-                          <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 mt">
-                        <section>
-                          <label for="class">Rooms:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="economy">1</option>
-                            <option value="first">2</option>
-                            <option value="business">3</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <section>
-                          <label for="class">Adult:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xxs-12 col-xs-6 mt">
-                        <section>
-                          <label for="class">Children:</label>
-                          <select class="cs-select cs-skin-border">
-                            <option value="" disabled selected>1</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
-                        </section>
-                      </div>
-                      <div class="col-xs-12">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search Packages">
-                      </div>
-                    </div>
-                   </div>
                   </div>
 
-                </div>
-              </div>
-              <div class="desc2 animate-box">
-                <div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-                  <p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
-                  <h2>Exclusive Limited Time Offer</h2>
-                  <h3>Fly to Hong Kong via Los Angeles, USA</h3>
-                  <span class="price">$599</span>
-                  <!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
                 </div>
               </div>
             </div>
@@ -753,19 +621,59 @@
   <!-- Main JS -->
   <script src="<?php echo base_url('assets/travel/js/main.js') ?>"></script>
 
+  <script src="<?php echo base_url('_tamplate/plugins/select2/select2.js') ?>"></script>
+
   </body>
 </html>
 
-<script type="text/javascript">
-  $('#pulange').change(function() 
-  {
-    if ($(this).is(':checked')) 
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 50px;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="<?php echo base_url('home/loginProcess'); ?>" method="post">
+              <div class="form-group">
+                <label for="email" class="form-control-label">Email:</label>
+                <input type="email" name="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-control-label">Password:</label>
+                <input type="password" name="password" class="form-control" id="password">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <span class="text-left">
+              <p class="text-left">Belum punya akun? <a href="<?php echo base_url('home/ndaftar') ?>">Daftar </a></p>
+            </span>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+    $('#pulange').change(function() 
     {
-        $('#date-end').prop('disabled', false);
-    } 
-    else 
-    {
-        $('#date-end').prop('disabled', true);
-    }
-});
-</script>
+      if ($(this).is(':checked')) 
+      {
+          $('.date-end').prop('disabled', false);
+      } 
+      else 
+      {
+          $('.date-end').prop('disabled', true);
+      }
+  });
+
+  $(document).ready(function() {
+        $('.rute_from').select2();
+        $('.rute_to').select2();
+    });
+
+    document.getElementById('depart_at').valueAsDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+  </script>

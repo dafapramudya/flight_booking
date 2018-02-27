@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lihat Transportasi</title>
+	<title>Lihat Reservasi</title>
 </head>
 <body>
 	<?=$this->session->flashdata('notif')?>
 	<div class="table-responsive">
 		<table id="table_id" class="table table-bordered table-striped table-hover">
 			<thead>
-				<h1 class="text-center">Daftar Rute</h1><br>
-				<button class="btn btn-success" onclick="tambah_rute()"><i class="glyphicon glyphicon-plus"></i> Tanbah Rute</button><br><br>
+				<h1 class="text-center">Request Konfirmasi Pembayaran</h1><br>
 				<tr>
 					<th>ID</th>
-					<th>Depart At</th>
-					<th>Rute From</th>
-					<th>Rute To</th>
-					<th>Harga</th>
-					<th>ID Transportasi</th>
+					<th>Kode Reservasi</th>
+					<th>ID Customer</th>
+					<th>Gambar Bukti</th>
+					<th>Status</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
-				foreach($show as $transport)
+				foreach($show as $req)
 				{?>
 					<tr>
-						<td><?php echo $transport->id ?></td>
-						<td><?php echo $transport->depart_at ?></td>
-						<td><?php echo $transport->rute_from ?></td>
-						<td><?php echo $transport->rute_to ?></td>
-						<td><?php echo $transport->price ?></td>
-						<td><?php echo $transport->transportationid ?></td>
+						<td><?php echo $req->id ?></td>
+						<td><?php echo $req->reser_code ?></td>
+						<td><?php echo $req->customer_id ?></td>
+						<td><img src="<?php echo base_url(''); $req->gambar_bukti ?>"></td>
+						<td><?php echo $req->status ?></td>
 						<td>
-							<button class="btn btn-warning" onclick="ngedit_rute(<?php echo $transport->id;?>)">Edit</button>
-							<button class="btn btn-danger" onclick="ngapus_rute(<?php echo $transport->id;?>)">Hapus</button>
+							<button class="btn btn-warning" onclick="ngedit_reser(<?php echo $req->id;?>)">Edit</button>
+							<button class="btn btn-danger" onclick="ngapus_reser(<?php echo $req->id;?>)">Hapus</button>
 						</td>
 					</tr>
 				<?php } ?>
@@ -47,40 +44,28 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h3 class="modal-title">Rute</h3>
+	        <h3 class="modal-title">Reservasi</h3>
 	      </div>
 	      <div class="modal-body form">
 	        <form action="#" id="form" class="form-horizontal">
 	          <input type="hidden" value="" name="id"/>
 	          <div class="form-body">
 	            <div class="form-group">
-	              <label class="control-label col-md-3">Depart At</label>
+	              <label class="control-label col-md-3">Kode Reservasi</label>
 	              <div class="col-md-9">
-	                <input name="depart_at" placeholder="Depart At" class="form-control" type="date" required="true">
+	                <input name="reservation_code" placeholder="Kode Reservasi" class="form-control" type="text" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
-	              <label class="control-label col-md-3">Rute From</label>
+	              <label class="control-label col-md-3">ID Customer</label>
 	              <div class="col-md-9">
-	                <input name="rute_from" placeholder="Rute From" class="form-control" type="number" min="1" required="true">
-	              </div>
-	            </div>
-				<div class="form-group">
-	              <label class="control-label col-md-3">Rute To</label>
-	              <div class="col-md-9">
-	                <input name="rute_to" placeholder="Rute To" class="form-control" type="number" min="1" required="true">
+	                <input name="customerid" placeholder="ID Customer" class="form-control" type="text" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
-	              <label class="control-label col-md-3">Harga</label>
+	              <label class="control-label col-md-3">Status</label>
 	              <div class="col-md-9">
-	                <input name="price" placeholder="Harga" class="form-control" type="text" required="true">
-	              </div>
-	            </div>
-	            <div class="form-group">
-	              <label class="control-label col-md-3">ID Transportasi</label>
-	              <div class="col-md-9">
-	                <input name="transportation_id" placeholder="ID Transportasi" class="form-control" type="text" required="true">
+	                <input name="status" placeholder="Status" class="form-control" type="text" required="true">
 	              </div>
 	            </div>
 	          </div>
@@ -105,48 +90,38 @@
 	    	var save_method; //for save method string
 	    	var table;
 
-	    	function tambah_rute()
-	    	{
-	    		save_method = 'add';
-		      	$('#form')[0].reset(); // reset form on modals
-		      	$('#modal_form').modal('show'); // show bootstrap modal
-		      	$('.modal-title').text('Tambah Rute'); // Set Title to Bootstrap modal title
-	    	}
-
-	    	function ngedit_rute(id)
+	    	function ngedit_reser(id)
 	    	{
 	      		save_method = 'update';
 	      		$('#form')[0].reset(); // reset form on modals
 
 		      	//Ajax Load data from ajax
 		      	$.ajax({
-			        url : "<?php echo base_url('admin/admin/edit_rute/')?>/" + id,
+			        url : "<?php echo base_url('admin/admin/edit_konfirm/')?>/" + id,
 			        type: "GET",
 			        dataType: "JSON",
 			        success: function(data)
 			        {
 			        	$('[name="id"]').val(data.id);
-			        	$('[name="depart_at"]').val(data.depart_at);
-			        	$('[name="rute_from"]').val(data.rute_from);	
-			            $('[name="rute_to"]').val(data.rute_to);
-			            $('[name="price"]').val(data.price);
-			            $('[name="transportation_id"]').val(data.transportationid);
+			        	$('[name="reservation_code"]').val(data.reser_code);
+			        	$('[name="customerid"]').val(data.customer_id);	
+			            $('[name="status"]').val(data.status);
 
 			            $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-			            $('.modal-title').text('Edit Rute'); // Set title to Bootstrap modal title
+			            $('.modal-title').text('Edit Konfirmasi'); // Set title to Bootstrap modal title
 
 		        },
 	
 	    		});
 	    	}
 
-	    	function ngapus_trans(id)
+	    	function ngapus_resers(id)
 		    {
-		      if(confirm('Anda yakin akan menghapus data pesawat dengan id ' + id + '?'))
+		      if(confirm('Anda yakin akan menghapus data konfirmasi reservasi pembayaran dengan id ' + id + '?'))
 		      {
 		        // ajax delete data from database
 		          $.ajax({
-		            url : "<?php echo base_url('admin/admin/ngapus_rute')?>/"+id,
+		            url : "<?php echo base_url('admin/admin/ngapus_konfirm')?>/"+id,
 		            type: "POST",
 		            dataType: "JSON",
 		            success: function(data)
@@ -167,13 +142,8 @@
 		    	var url;
 		      	if (save_method == 'update')
 		      	{
-		       		url = "<?php echo base_url('admin/admin/update_rute')?>";
+		       		url = "<?php echo base_url('admin/admin/update_konfirm')?>";
 		      	}
-		      	else if (save_method == 'add') 
-		      	{
-		      		url = "<?php echo base_url('admin/admin/tambah_rute') ?>"
-		      	}
-
 		       // ajax adding data to database
 		          $.ajax({
 		            url : url,

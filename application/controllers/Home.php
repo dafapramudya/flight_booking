@@ -25,6 +25,7 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data['airport'] = $this->my_model->show_bandara();
+		$data['class'] = $this->my_model->classe();
 		$this->load->view('index', $data);
 	}
 
@@ -42,6 +43,7 @@ class Home extends CI_Controller
 	{
 		$nama = $this->input->post('fullname');
         $username = $this->input->post('username');
+        $phone = $this->input->post('phone');
         $email = $this->input->post('email');
 		$password = md5($this->input->post('password'));
 
@@ -49,6 +51,7 @@ class Home extends CI_Controller
 		(
 			'fullname' => $nama,
 			'username' => $username,
+			'phone' => $phone,
 			'email' => $email,
 			'password' => $password,
 			'level' => 3
@@ -74,6 +77,7 @@ class Home extends CI_Controller
 				$id = $row->id;
 				$uname = $row->username;
 				$pass = $row->password;
+				$phone = $row->phone;
 				$email = $row->email;
 				$level = $row->level;
 				$fullname = $row->fullname;
@@ -84,6 +88,7 @@ class Home extends CI_Controller
 				'id' => $id,
 		        'username' => $uname,
 		        'password' => $pass,
+		        'phone' => $phone,
 		        'email' => $email,
 		        'fullname' => $fullname,
 		        'level' => $level,
