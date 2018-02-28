@@ -96,7 +96,7 @@
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="<?php echo base_url('') ?>">Home</a></li>
 							<li>
 								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
 								<ul class="fh5co-sub-menu">

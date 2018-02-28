@@ -13,6 +13,9 @@
 				<tr>
 					<th>ID</th>
 					<th>Depart At</th>
+					<th>Arrive</th>
+					<th>Tanggal Terbang</th>
+					<th>Tanggal Kembali</th>
 					<th>Rute From</th>
 					<th>Rute To</th>
 					<th>Harga</th>
@@ -27,6 +30,9 @@
 					<tr>
 						<td><?php echo $transport->id ?></td>
 						<td><?php echo $transport->depart_at ?></td>
+						<td><?php echo $transport->arrive ?></td>
+						<td><?php echo $transport->tanggal_terbang ?></td>
+						<td><?php echo $transport->tanggal_kembali ?></td>
 						<td><?php echo $transport->rute_from ?></td>
 						<td><?php echo $transport->rute_to ?></td>
 						<td><?php echo $transport->price ?></td>
@@ -56,7 +62,25 @@
 	            <div class="form-group">
 	              <label class="control-label col-md-3">Depart At</label>
 	              <div class="col-md-9">
-	                <input name="depart_at" placeholder="Depart At" class="form-control" type="date" required="true">
+	                <input name="depart_at" placeholder="Depart At" class="form-control" type="time" required="true">
+	              </div>
+	            </div>
+	             <div class="form-group">
+	              <label class="control-label col-md-3">Arrive</label>
+	              <div class="col-md-9">
+	                <input name="arrive" placeholder="Arrive" class="form-control" type="time" required="true">
+	              </div>
+	            </div>
+	             <div class="form-group">
+	              <label class="control-label col-md-3">Tanggal Terbang</label>
+	              <div class="col-md-9">
+	                <input name="tgl_terbang" placeholder="Tanggal Terbang" class="form-control" type="date" required="true">
+	              </div>
+	            </div>
+	             <div class="form-group">
+	              <label class="control-label col-md-3">Tanggal Kembali</label>
+	              <div class="col-md-9">
+	                <input name="tgl_kembali" placeholder="Tanggal Kembali" class="form-control" type="date" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
@@ -127,6 +151,9 @@
 			        {
 			        	$('[name="id"]').val(data.id);
 			        	$('[name="depart_at"]').val(data.depart_at);
+			        	$('[name="arrive"]').val(data.arrive);
+			        	$('[name="tgl_terbang"]').val(data.tanggal_terbang);
+			        	$('[name="tgl_kembali"]').val(data.tanggal_kembali);
 			        	$('[name="rute_from"]').val(data.rute_from);	
 			            $('[name="rute_to"]').val(data.rute_to);
 			            $('[name="price"]').val(data.price);
@@ -140,9 +167,9 @@
 	    		});
 	    	}
 
-	    	function ngapus_trans(id)
+	    	function ngapus_rute(id)
 		    {
-		      if(confirm('Anda yakin akan menghapus data pesawat dengan id ' + id + '?'))
+		      if(confirm('Anda yakin akan menghapus data rute dengan id ' + id + '?'))
 		      {
 		        // ajax delete data from database
 		          $.ajax({

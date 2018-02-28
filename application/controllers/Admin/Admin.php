@@ -130,6 +130,9 @@ class Admin extends CI_Controller
 	{
 		$id = $this->input->post('id');
 		$depart_at = $this->input->post('depart_at');
+		$arrive = $this->input->post('arrive');
+		$tgl_terbang = $this->input->post('tgl_terbang');
+		$tgl_kembali = $this->input->post('tgl_kembali');
 		$rute_from = $this->input->post('rute_from');
 		$rute_to = $this->input->post('rute_to');
 		$price = $this->input->post('price');
@@ -139,6 +142,9 @@ class Admin extends CI_Controller
 		(
 			'id' => $id,
 			'depart_at' => $depart_at,
+			'arrive' => $arrive,
+			'tanggal_terbang' => $tgl_terbang,
+			'tanggal_kembali' => $tgl_kembali,
 			'rute_from' => $rute_from,
 			'rute_to' => $rute_to,
 			'price' => $price,
@@ -165,6 +171,9 @@ class Admin extends CI_Controller
 	{
 		$id = $this->input->post('id');
 		$depart_at = $this->input->post('depart_at');
+		$arrive = $this->input->post('arrive');
+		$tgl_terbang = $this->input->post('tgl_terbang');
+		$tgl_kembali = $this->input->post('tgl_kembali');
 		$rute_from = $this->input->post('rute_from');
 		$rute_to = $this->input->post('rute_to');
 		$price = $this->input->post('price');
@@ -173,11 +182,14 @@ class Admin extends CI_Controller
 		$data = array
 		(
 			'id' => $id,
-			'depart_at' => $trans_code,
-			'rute_from' => $desc,
-			'rute_to' => $seat_qty,
+			'depart_at' => $depart_at,
+			'arrive' => $arrive,
+			'tanggal_terbang' => $tgl_terbang,
+			'tanggal_kembali' => $tgl_kembali,
+			'rute_from' => $rute_from,
+			'rute_to' => $rute_to,
 			'price' => $price,
-			'transportation_typeid' => $trans_typeid
+			'transportationid' => $transportationid
 		);
 
 		$where = array
@@ -256,6 +268,17 @@ class Admin extends CI_Controller
 		);
 
 		$data = $this->my_model->get_by_id('transportation', $where);
+		echo json_encode($data);
+	}
+
+	public function edit_type_trans($id)
+	{
+		$where = array
+		(
+			'id' => $id,
+		);
+
+		$data = $this->my_model->get_by_id('transportation_type', $where);
 		echo json_encode($data);
 	}
 

@@ -182,6 +182,13 @@
 					  <div class="panel-heading"><p style="color: black; font-size: 17px; margin: 20px">Data Pemesan<p></div>
 					  <div class="panel-body" >
 					  	<div class="col-md-12">
+					  		<div class="col-md-12" style="padding: 0; margin: 0;">
+								<label for="nohp">Titel</label>
+								<select name="titele" class="form-control">
+									<option value="Laki-Laki">Tuan</option>
+									<option value="Perempuan">Nona</option>
+								</select>
+							</div>
 							<div style="width: 100%">
 								<?php foreach ($reserve as $res) { ?>
 								<input type="hidden" class="form-control" value="<?php echo $res->id ?>" name="rute_id">

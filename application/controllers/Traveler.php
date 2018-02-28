@@ -109,7 +109,7 @@ class Traveler extends CI_Controller
  		$notelpemesan = $this->input->post('nohp');
     	$emailpemesan = $this->input->post('email');
  		$alamatpemesan = $this->input->post('alamat');
- 		$jenkelpenumpang = $this->input->post('titel');
+ 		$jenkelpenumpang = $this->input->post('titele');
  		$namapenumpang = $this->input->post('namalengkap');
  		$bagasi = $this->input->post('bagasi');
  		$seat = $this->input->post('seat');

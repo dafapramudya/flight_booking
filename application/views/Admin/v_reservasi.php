@@ -21,6 +21,7 @@
 					<th>Depart At</th>
 					<th>Harga</th>
 					<th>ID User</th>
+					<th>Status</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
@@ -39,9 +40,10 @@
 						<td><?php echo $reservasi->depart_at ?></td>
 						<td><?php echo $reservasi->price ?></td>
 						<td><?php echo $reservasi->userid ?></td>
+						<td><?php echo $reservasi->status ?></td>
 						<td>
 							<button class="btn btn-warning" onclick="ngedit_reser(<?php echo $reservasi->id;?>)">Edit</button>
-							<button class="btn btn-danger" onclick="ngapus_reser(<?php echo $reservasi->id;?>)">Hapus</button>
+							<button class="btn btn-danger" onclick="ngapus_resers(<?php echo $reservasi->id;?>)">Hapus</button>
 						</td>
 					</tr>
 				<?php } ?>
@@ -82,25 +84,25 @@
 	            <div class="form-group">
 	              <label class="control-label col-md-3">ID Customer</label>
 	              <div class="col-md-9">
-	                <input name="customerid" placeholder="ID Customer" class="form-control" type="text" required="true">
+	                <input name="customerid" placeholder="ID Customer" class="form-control" type="number" min="1" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
 	              <label class="control-label col-md-3">Kode Tempat Duduk</label>
 	              <div class="col-md-9">
-	                <input name="seat_code" placeholder="Kode Tempat Duduk" class="form-control" type="text" required="true">
+	                <input name="seat_code" placeholder="Kode Tempat Duduk" class="form-control" type="number" min="1" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
 	              <label class="control-label col-md-3">ID Rute</label>
 	              <div class="col-md-9">
-	                <input name="ruteid" placeholder="ID Rute" class="form-control" type="text" required="true">
+	                <input name="ruteid" placeholder="ID Rute" class="form-control" type="number" min="1" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
 	              <label class="control-label col-md-3">Depart At</label>
 	              <div class="col-md-9">
-	                <input name="depart_at" placeholder="Depart At" class="form-control" type="text" required="true">
+	                <input name="depart_at" placeholder="Depart At" class="form-control" type="time" required="true">
 	              </div>
 	            </div>
 	            <div class="form-group">
@@ -112,7 +114,7 @@
 	            <div class="form-group">
 	              <label class="control-label col-md-3">ID User</label>
 	              <div class="col-md-9">
-	                <input name="userid" placeholder="ID User" class="form-control" type="text" required="true">
+	                <input name="userid" placeholder="ID User" class="form-control" type="number" min="1" required="true">
 	              </div>
 	            </div>
 	          </div>
@@ -167,6 +169,7 @@
 			            $('[name="depart_at"]').val(data.depart_at);
 			            $('[name="price"]').val(data.price);
 			            $('[name="userid"]').val(data.userid);
+			            $('[name="status"]').val(data.status);
 
 			            $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
 			            $('.modal-title').text('Edit Reservasi'); // Set title to Bootstrap modal title

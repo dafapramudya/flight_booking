@@ -87,7 +87,7 @@
 
 		      	//Ajax Load data from ajax
 		      	$.ajax({
-			        url : "<?php echo base_url('admin/admin/edit_trans/')?>/" + id,
+			        url : "<?php echo base_url('admin/admin/edit_type_trans/')?>/" + id,
 			        type: "GET",
 			        dataType: "JSON",
 			        success: function(data)
@@ -96,7 +96,7 @@
 			        	$('[name="description"]').val(data.description);
 
 			            $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-			            $('.modal-title').text('Edit Transportasi'); // Set title to Bootstrap modal title
+			            $('.modal-title').text('Edit Tipe Transportasi'); // Set title to Bootstrap modal title
 
 		        },
 	
